@@ -1,10 +1,16 @@
 import './App.css';
-import Navbar from './components/navbar'
+import React from 'react';
+import Login from './components/Login';
+import NavBar from './components/NavBar';
+
 
 function App() {
   return (
     <div className="App">
-      Not Audible
+      <NavBar />
+      <div className="Logo">
+        <img src="logo.jpeg"></img> 
+      </div>
     </div>
   );
 }
