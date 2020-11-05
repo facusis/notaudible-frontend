@@ -27,7 +27,16 @@ const Login = () => {
         'Accept' : 'application/json'
       },
       body: JSON.stringify({email: datos.email, password: datos.password})
-    }).then(res => res.json()).then((result) => {console.log(result)});
+    }).then(res => res.json())
+    .then((result) => {
+      console.log(result);
+      localStorage.setItem("token", JSON.stringify(result.token));
+      if (!localStorage.getItem("token")) {
+        window.alert("No se ha guardado token");
+      } else {
+        window.alert(JSON.stringify(result.token));
+      }
+    });
   }
 
   return (
