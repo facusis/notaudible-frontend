@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
-const Login = () => {
+const Register = () => {
 
   const [datos, setDatos] = useState( {
     email: '',
@@ -8,7 +8,7 @@ const Login = () => {
     password: ''
   })
 
-  const handleImputChange = (event) => {
+  const handleInputChange = (event) => {
     setDatos({
       ...datos,
       [event.target.name] : event.target.value
@@ -20,7 +20,7 @@ const Login = () => {
     console.log(datos.email + ' ' + datos.password)
 
     //localhost:3000/data/User
-    fetch('http://localhost:3000/login',{
+    fetch('http://localhost:3000/register',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,15 +32,19 @@ const Login = () => {
 
   return (
     <Fragment>
-      <h1>Login</h1>
+      <h1>Register</h1>
       <form onSubmit={sendForm}>
         <div>
             Ingrese Email<br></br>
-          <input placeholder="example@example.com" type="text" name="email" onChange={handleImputChange}></input>
+          <input placeholder="example@example.com" type="text" name="email" onChange={handleInputChange}></input>
+        </div>
+        <div>
+            Ingrese NickName<br></br>
+          <input placeholder="Example123" type="text" name="nickname" onChange={handleInputChange}></input>
         </div>
         <div>
             Ingrese Password<br></br>
-          <input placeholder="••••••" type="text" name="password" onChange={handleImputChange}></input>
+          <input placeholder="••••••" type="text" name="password" onChange={handleInputChange}></input>
         </div>
         <div>
           <button type="submit">Enviar</button>
@@ -50,4 +54,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default Register;

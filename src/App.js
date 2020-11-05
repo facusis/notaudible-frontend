@@ -1,16 +1,17 @@
 import './App.css';
 import React from 'react';
 import Login from './components/Login';
-import NavBar from './components/NavBar';
+import Navbar from './components/Navbar';
+import Register from './components/Register';
+
 
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <div className="Logo">
-        <img src="logo.jpeg"></img> 
-      </div>
+      <Navbar />
+      <Login />
+      <Register />
     </div>
   );
 }
