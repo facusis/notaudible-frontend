@@ -20,7 +20,7 @@ const Login = () => {
     console.log(datos.email + ' ' + datos.password)
 
     //localhost:3000/data/User
-    fetch('http://localhost:3000/login',{
+    fetch('http://localhost:3001/login',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
