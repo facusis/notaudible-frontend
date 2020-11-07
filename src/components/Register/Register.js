@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import './Register.css';
 
 const Register = () => {
 
@@ -32,23 +33,28 @@ const Register = () => {
 
   return (
     <Fragment>
-      <h1>Register</h1>
       <form onSubmit={sendForm}>
-        <div>
-            Ingrese Email<br></br>
-          <input placeholder="example@example.com" type="text" name="email" onChange={handleInputChange}></input>
+      <div class="login-reg-panel">
+        <div class="login-info-box">
+          <h2>¿Tienes cuenta?</h2>
+          <label id="label-register" for="log-reg-show">Iniciar Sesión</label>
+          <input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked" />
         </div>
-        <div>
-            Ingrese NickName<br></br>
-          <input placeholder="Example123" type="text" name="nickname" onChange={handleInputChange}></input>
+                  
+        <div class="register-info-box">
+          
         </div>
-        <div>
-            Ingrese Password<br></br>
-          <input placeholder="••••••" type="text" name="password" onChange={handleInputChange}></input>
+                  
+        <div class="white-panel">
+          <div class="register-show">
+            <h2>REGISTER</h2>
+            <input type="text" placeholder="Email"/>
+            <input type="password" placeholder="Password"/>
+            <input type="password" placeholder="Confirm Password" />
+            <input type="button" value="Register" />
+          </div>
         </div>
-        <div>
-          <button type="submit">Enviar</button>
-        </div>
+      </div>
       </form>
     </Fragment>
   )
