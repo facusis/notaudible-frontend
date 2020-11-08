@@ -35,13 +35,37 @@ const Home = () => {
     <Fragment>
         <div>
             <div className="home">
-                <img src='' alt="Cinque Terre" width="1000" height="300"></img>
             </div>
             <div>
                 <div className="bloque-izquierdo">
-                    Hola a todos
                 </div>
-                <div className="bloque-derecho"></div>
+                <div className="bloque-derecho">
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <div className="container-foto-accion"></div>
+      </td>
+      <td>
+        <div className="container-foto-terror" alt="Girl in a jacket" ></div>
+      </td>
+      <td>
+      <div className="container-foto-comedia"></div>
+      </td>
+      </tr>
+    <tr>
+
+    <td>
+    </td>
+      <td>
+      </td>
+      <td>
+      </td>
+    </tr>
+       
+  </tbody>
+</table>
+                </div>
             </div>
         </div>
       

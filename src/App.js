@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Register from './components/Register/Register';
 import Home from './components/Home/Home';
 import {BrowserRouter,
+Link,
 Switch,
 Route
 } from 'react-router-dom';
@@ -15,7 +16,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Navbar />
-      
       <Switch>
         <Route path="/login">
           <Login />
@@ -27,6 +27,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
+
       </BrowserRouter>
       <div>      
       </div>

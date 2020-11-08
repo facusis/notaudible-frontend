@@ -1,6 +1,14 @@
 import React, { Fragment, useState } from 'react';
+import { useHistory } from "react-router-dom";
+import "./Register.css";
 
 const Register = () => {
+
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/login");
+  }
 
   const [datos, setDatos] = useState( {
     email: '',
@@ -34,22 +42,33 @@ const Register = () => {
     <Fragment>
       <h1>Register</h1>
       <form onSubmit={sendForm}>
-        <div>
-            Ingrese Email<br></br>
-          <input placeholder="example@example.com" type="text" name="email" onChange={handleInputChange}></input>
-        </div>
-        <div>
-            Ingrese NickName<br></br>
-          <input placeholder="Example123" type="text" name="nickname" onChange={handleInputChange}></input>
-        </div>
-        <div>
-            Ingrese Password<br></br>
-          <input placeholder="••••••" type="text" name="password" onChange={handleInputChange}></input>
-        </div>
-        <div>
-          <button type="submit">Enviar</button>
-        </div>
+      <div class="login-reg-panel">
+		<div class="login-info-box">
+			<h2>Have an account?</h2>
+			<p>Lorem ipsum dolor sit amet</p>
+			<label id="label-register" for="log-reg-show">Login</label>
+			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked" />
+		</div>
+							
+		<div class="register-info-box">
+			<h2>Don't have an account?</h2>
+			<p>Lorem ipsum dolor sit amet</p>
+			<label id="label-login" for="log-login-show">Register</label>
+			<input type="radio" name="active-log-panel" id="log-login-show" />
+		</div>
+							
+		<div class="white-panel">
+			<div class="register-show">
+				<h2>REGISTER</h2>
+				<input type="text" placeholder="Email"/>
+				<input type="text" placeholder="Nickname" />
+				<input type="password" placeholder="Password"/>
+				<input type="button" value="Register" />
+			</div>
+		</div>
+	</div>
       </form>
+      <button type="button" onClick={handleClick}>Go home</button>
     </Fragment>
   )
 }

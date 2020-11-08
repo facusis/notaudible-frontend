@@ -1,17 +1,56 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta');
 .home{
   font-family: 'Mukta', sans-serif;
-	height:100vh;
-	min-height:550px;
-	background-image:url(img/fondo.jpg);
+	height:50vh;
+	background-image:url(img/fondo.png);
 	background-repeat: no-repeat;
 	background-size:cover;
 	background-position:center;
 	position:relative;
     overflow-y: hidden;
 }
-.bloque-izquierda{
+.bloque-izquierdo{
     float:left;
+	background-color: #333;
+	width: 10%;
+	height: 500px;
+	text-align: center;
+	align-content: center;
 }
-.bloque-derecha{
+.bloque-derecho{
+	float: right;
+	width: 70%;
+	height: 50%;
+}
+
+.div-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Foto accion */
+.container-foto-accion {
+    position: relative;
+    width: 414px;
+    height: 244px;
+    margin-left: -64%;
+    margin-top: 1%;
+    background-image: url(img/accion.jpg);
+}
+.container-foto-terror {
+    position: relative;
+    width: 411px;
+    height: 244px;
+    margin-left: 23%;
+    margin-top: -1%;
+    background-image: url(img/terror.jpg);
+}
+.container-foto-comedia {
+    position: relative;
+    width: 386px;
+    height: 244px;
+    margin-left: 23%;
+    margin-top: -1%;
+    background-image: url(img/comedia.jpg);
 }
