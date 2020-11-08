@@ -1,8 +1,9 @@
 import './App.css';
 import React from 'react';
-import Login from './components/Login';
+import Login from './components/Login/Login';
 import Navbar from './components/Navbar';
-import Register from './components/Register';
+import Register from './components/Register/Register';
+import Home from './components/Home/Home';
 import {BrowserRouter,
 Switch,
 Route
@@ -22,9 +23,13 @@ function App() {
         <Route path="/register">
           <Register />
         </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
       </Switch>
       </BrowserRouter>
-      
+      <div>      
+      </div>
       
      
     </div>
