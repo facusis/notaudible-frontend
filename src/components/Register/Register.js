@@ -40,35 +40,24 @@ const Register = () => {
 
   return (
     <Fragment>
-      <h1>Register</h1>
-      <form onSubmit={sendForm}>
-      <div class="login-reg-panel">
-		<div class="login-info-box">
-			<h2>Have an account?</h2>
-			<p>Lorem ipsum dolor sit amet</p>
-			<label id="label-register" for="log-reg-show">Login</label>
-			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked" />
-		</div>
+    <form onSubmit={sendForm}>
+      <div class="login-reg-panel-1">
+        <div class="login-info-box-1">
+          <h2>¿Tienes alguna cuenta?</h2>
+          <label id="label-register" for="log-reg-show-1" onClick={handleClick}><b>Inicia Sesión</b></label>
+        </div>	
 							
-		<div class="register-info-box">
-			<h2>Don't have an account?</h2>
-			<p>Lorem ipsum dolor sit amet</p>
-			<label id="label-login" for="log-login-show">Register</label>
-			<input type="radio" name="active-log-panel" id="log-login-show" />
-		</div>
-							
-		<div class="white-panel">
-			<div class="register-show">
-				<h2>REGISTER</h2>
-				<input type="text" placeholder="Email"/>
-				<input type="text" placeholder="Nickname" />
-				<input type="password" placeholder="Password"/>
-				<input type="button" value="Register" />
-			</div>
-		</div>
-	</div>
-      </form>
-      <button type="button" onClick={handleClick}>Go home</button>
+        <div class="white-panel-r">
+          <div class="register-show">
+            <h2 className="titulo">Registrarse</h2>
+            <input type="text" placeholder="Correo Electronico" onClick={handleInputChange}/>
+            <input type="text" placeholder="Usuario" onClick={handleInputChange}/>
+            <input type="password" placeholder="Contraseña" onClick={handleInputChange}/>
+            <input type="button" value="Register" onClick={handleInputChange}/>
+          </div>
+        </div>
+	    </div>
+    </form>
     </Fragment>
   )
 }
