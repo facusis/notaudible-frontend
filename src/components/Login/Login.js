@@ -1,7 +1,13 @@
 import React, { Fragment, useState } from 'react';
+import { useHistory } from "react-router-dom";
 import './Login.css';
 
 const Login = () => {
+  let history = useHistory();
+
+  function handleClickLR() {
+    history.push("/register");
+  }
 
   const [datos, setDatos] = useState( {
     email: '',
@@ -41,19 +47,24 @@ const Login = () => {
   }
   return (
     <Fragment>
-      <h1>Login</h1>
       <form onSubmit={sendForm}>
-        <div>
-            Ingrese Email<br></br>
-          <input placeholder="example@example.com" type="text" name="email" onChange={handleImputChange}></input>
-        </div>
-        <div>
-            Ingrese Password<br></br>
-          <input placeholder="••••••" type="text" name="password" onChange={handleImputChange}></input>
-        </div>
-        <div>
-          <button type="submit">Enviar</button>
-        </div>
+      <div class="login-reg-panel">
+      <div className="logo-l"></div>			
+              <div class="register-info-box">
+                <h2>¿No tienes cuenta?</h2>
+                <label id="label-login" for="log-login-show" onClick={handleClickLR}>Registrarse</label>
+              </div>
+                        
+              <div class="white-panel">
+                <div class="login-show">
+                  <h2>LOGIN</h2>
+                  <input type="text" placeholder="Email" />
+                  <input type="password" placeholder="Password" />
+                  <input type="button" value="Login" />
+                  <a href="" className="olvidado">Forgot password?</a>
+                </div>
+              </div>
+            </div>
       </form>
     </Fragment>
   )

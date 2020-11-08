@@ -42,18 +42,19 @@ const Register = () => {
     <Fragment>
     <form onSubmit={sendForm}>
       <div class="login-reg-panel-1">
+      <div className="logo"></div>
         <div class="login-info-box-1">
           <h2>¿Tienes alguna cuenta?</h2>
-          <label id="label-register" for="log-reg-show-1" onClick={handleClick}><b>Inicia Sesión</b></label>
+          <label id="label-register" for="log-reg-show-1" onClick={handleClick}><b>Iniciar Sesión</b></label>
         </div>	
 							
         <div class="white-panel-r">
           <div class="register-show">
             <h2 className="titulo">Registrarse</h2>
-            <input type="text" placeholder="Correo Electronico" onClick={handleInputChange}/>
-            <input type="text" placeholder="Usuario" onClick={handleInputChange}/>
-            <input type="password" placeholder="Contraseña" onClick={handleInputChange}/>
-            <input type="button" value="Register" onClick={handleInputChange}/>
+            <input type="text" placeholder="Correo Electrónico..." onClick={handleInputChange} required/>
+            <input type="text" placeholder="Usuario..." onClick={handleInputChange} required/>
+            <input type="password" placeholder="Contraseña..." onClick={handleInputChange}required/><b>*</b>
+            <input type="button" value="Registrarse" onClick={handleInputChange}/>
           </div>
         </div>
 	    </div>

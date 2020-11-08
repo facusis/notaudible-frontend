@@ -56,7 +56,7 @@ a{
 .login-info-box-1{
     width:30%;
     padding:0 50px;
-    top:37%;
+    top:46%;
     left:0;
     position:absolute;
     text-align:center;
@@ -75,7 +75,7 @@ a{
 }
 .register-show input[type="button"] {
     max-width: 150px;
-    width: 80px;
+    width: 100%;
     background: #444444;
     color: #f9f9f9;
     border: none;
@@ -109,3 +109,12 @@ a
 {
     color: black;
 }
+.logo {
+    background: url("./img/log.jpg") no-repeat;
+    padding: 0px;
+    width: 447px;
+    height: 100px;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 3%;
+  }
