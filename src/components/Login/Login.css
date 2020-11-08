@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta');
-body{
+
+.body-1{
   font-family: 'Mukta', sans-serif;
 	height:100vh;
 	min-height:550px;
-	background-image:url(./img/fondo.jpg);
+	background-image:url(./img/fondo3.png);
 	background-repeat: no-repeat;
 	background-size:cover;
 	background-position:center;
@@ -45,10 +46,10 @@ a{
 .login-reg-panel #label-login-1, 
 .login-reg-panel #label-register{
     border:1px solid #9E9E9E;
-    padding:0 5px;
+    padding:0 0px;
     width:150px;
     text-align:center;
-    border-radius:3px;
+    border-radius:0px;
     cursor:pointer;
 }
 .register-info-box{
@@ -70,7 +71,7 @@ a{
     color: #242424;
     text-align: center;
     padding: 61px;
-    margin-top: 52px;
+    margin-top: 45px;
 }
 .show-log-panel{
     display:block;
@@ -93,7 +94,7 @@ a{
     padding: 10px;
     text-transform: uppercase;
     border-radius: 2px;
-    float:right;
+    float:center;
     cursor:pointer;
 }
 .login-show a{
@@ -134,7 +135,7 @@ a{
     height: 100px;
     position: absolute;
     margin-top: 10%;
-    margin-left: 65%;
+    margin-left: 64%;
 }    
 .olvidado{
     color: black;

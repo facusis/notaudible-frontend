@@ -47,6 +47,7 @@ const Login = () => {
   }
   return (
     <Fragment>
+    <div className="body-1">
       <form onSubmit={sendForm}>
       <div class="login-reg-panel">
       <div className="logo-l"></div>			
@@ -57,15 +58,16 @@ const Login = () => {
                         
               <div class="white-panel">
                 <div class="login-show">
-                  <h2>LOGIN</h2>
-                  <input type="text" placeholder="Email" />
-                  <input type="password" placeholder="Password" />
-                  <input type="button" value="Login" />
-                  <a href="" className="olvidado">Forgot password?</a>
+                  <h2>Iniciar Sesión</h2>
+                  <input type="text" placeholder="Correo Electrónico" onClick={handleImputChange}/>
+                  <input type="password" placeholder="Contraseña" onClick={handleImputChange}/>
+                  <input type="button" value="Iniciar Sesión" />
+                  <a href="" className="olvidado">¿Te has olvidado la contraseña?</a>
                 </div>
               </div>
             </div>
       </form>
+      </div>
     </Fragment>
   )
 }

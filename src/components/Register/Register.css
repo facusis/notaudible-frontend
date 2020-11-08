@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta');
-body{
+.body-1{
   font-family: 'Mukta', sans-serif;
 	height:100vh;
 	min-height:550px;
-	background-image:url(img/fondo.jpg);
+	background-image:url(img//fondo3.png);
 	background-repeat: no-repeat;
 	background-size:cover;
 	background-position:center;

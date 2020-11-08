@@ -40,6 +40,7 @@ const Register = () => {
 
   return (
     <Fragment>
+    <div className="body-1">
     <form onSubmit={sendForm}>
       <div class="login-reg-panel-1">
       <div className="logo"></div>
@@ -59,6 +60,7 @@ const Register = () => {
         </div>
 	    </div>
     </form>
+    </div>
     </Fragment>
   )
 }

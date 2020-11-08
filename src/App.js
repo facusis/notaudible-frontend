@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Login from './components/Login/Login';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Register from './components/Register/Register';
 import Home from './components/Home/Home';
 import {BrowserRouter,
@@ -29,8 +29,6 @@ function App() {
       </Switch>
 
       </BrowserRouter>
-      <div>      
-      </div>
       
      
     </div>
