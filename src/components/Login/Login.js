@@ -35,7 +35,7 @@ const Login = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept' : 'application/json'
+        'Accept': 'application/json',
       },
       body: JSON.stringify({email: datos.email, password: datos.password})
     }).then(res => res.json())
