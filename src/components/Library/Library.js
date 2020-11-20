@@ -22,10 +22,14 @@ export default function Library() {
 
     return (
       <div>
-          <form>
-          <input type="text" name="title" className="titulo-libro" placeholder="Titulo del libro" required onChange={handleImputChange}/> 
-          <input type="text" name="category" placeholder="Categoria del libro" required onChange={handleImputChange}/>
-          <input type="text" name="author" placeholder="Autor del libro" required onChange={handleImputChange}/>
+          <form className={'form-library'}>
+            <label>Titulo del libro</label><br/>
+          <input className={'input-library'} type="text" name="title" placeholder="Titulo del libro" required onChange={handleImputChange}/> <br/>
+          <label>Titulo del libro</label><br/>
+
+          <input className={'input-library'} type="text" name="category" placeholder="Categoria del libro" required onChange={handleImputChange}/> <br/>
+          <label>Autor</label><br/>
+          <input className={'input-library'} type="text" name="author" placeholder="Autor del libro" required onChange={handleImputChange}/><br/>
           <button type="submit">Crear libro</button>
           </form>
 
