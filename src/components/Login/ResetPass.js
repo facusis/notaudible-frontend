@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from 'react';
+import { useParams } from "react-router-dom";
 
 const ResetPass = () => {
 
   const [datos, setDatos] = useState( {
     email: '',
-    verifypassCode: '',
+    verifypassCode: '', //:id useparamas()
     newPassword: ''
   })
 
@@ -14,7 +15,7 @@ const ResetPass = () => {
       [event.target.name] : event.target.value
     })
   }
-
+ 
   const sendForm = (event) => {
     event.preventDefault();
     console.log(datos.email)
