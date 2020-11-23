@@ -3,15 +3,22 @@ import { useHistory } from "react-router-dom";
 import './Login.css';
 
 const Login = () => {
+
   let history = useHistory();
 
-  function handleClickLR() {
+  function handleClickR() {
     history.push("/register");
   }
 
-  function handleClickOlvidado() {
-    history.push("forgetpass")
+  function handleClickO() {
+    history.push("/login/forgetPass");
   }
+ 
+  //Mostrar constraseña
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
 
   const [datos, setDatos] = useState( {
     email: '',
@@ -57,19 +64,20 @@ const Login = () => {
       <div className="logo-l"></div>			
               <div className="register-info-box">
                 <h2 className="nocuenta">¿No tienes cuenta?</h2>
-                <label id="label-login" className="registroclick" for="log-login-show" onClick={handleClickLR}>Registrarse</label>
+                <label id="label-login" for="log-login-show" onClick={handleClickR}>Registrarse</label>
               </div>
-                        
-              <div class="white-panel">
-                <div class="login-show">
+              <div className="white-panel">
+                <div className="login-show">
                   <h2>Iniciar Sesión</h2>
-                  <input type="text" name="email" placeholder="Correo Electrónico" required onClick={handleImputChange}/>
-                  <input type="password" name="password" placeholder="Contraseña" required onClick={handleImputChange}/>
+                  <input type="text" name="email" placeholder="Correo Electrónico" required onChange={handleImputChange}/>
+                  <input  type={passwordShown ? "text" : "password"} name="password" placeholder="Contraseña" required onChange={handleImputChange}/>
+                  <i onClick={togglePasswordVisiblity} className="ver"><img src="https://image.flaticon.com/icons/png/512/65/65000.png" className="eye" /></i>{" "}
                   <input type="submit" value="Iniciar Sesión" />
-                  
-                  <a onClick={handleClickOlvidado} className="olvidado">¿Te has olvidado la contraseña?</a>
-                </div>
+                  <a className="olvidado" onClick={handleClickO}>¿Te has olvidado la contraseña?</a>
+                </div> 
               </div>
+
+
             </div>
       </form>
       </div>

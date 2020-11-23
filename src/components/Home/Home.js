@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import "./Home.css";
 
 const Home = () => {
-
+    
   return (
     <Fragment>
     <div class="main">
