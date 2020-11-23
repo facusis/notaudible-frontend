@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import './ForgetPass.css';
 
 const ForgetPass = () => {
 
@@ -13,6 +14,7 @@ const ForgetPass = () => {
     })
   }
 
+  
   const sendForm = (event) => {
     event.preventDefault();
     console.log(datos.email)
@@ -30,16 +32,24 @@ const ForgetPass = () => {
 
   return (
     <Fragment>
-      <h1>Recuperar contraseña</h1>
-      <form onSubmit={sendForm}>
-        <div>
-            Ingrese Email<br></br>
-          <input placeholder="example@example.com" type="text" name="email" onChange={handleInputChange}></input>
+    <div className="body-1">
+      <div className="forget-reg-panel">
+        <div className="white-panel-forget">
+          <form onSubmit={sendForm}>
+            <div className="forget-show">
+              <h2>Recuperar contraseña</h2>
+              <div>
+                <label className="text-email">Escriba su email </label>
+                <input placeholder="example@example.com" type="text" name="email" onChange={handleInputChange}></input>
+              </div> 
+              <div> 
+                <button type="submit">Enviar</button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div>
-          <button type="submit">Enviar</button>
-        </div>
-      </form>
+      </div>  
+    </div>
     </Fragment>
   )
 }

@@ -15,9 +15,10 @@ a{
   text-decoration:none;
   color:#444444;
 }
+
 .login-reg-panel{
     position: relative;
-    top: 330px;
+    top: 413px;
     transform: translateY(-50%);
     text-align: center;
     width: 70%;
@@ -43,13 +44,14 @@ a{
 .login-reg-panel{
     color:#B8B8B8;
 }
-.login-reg-panel #label-login, 
+.login-reg-panel #label-login-1, 
 .login-reg-panel #label-register{
     border:1px solid #9E9E9E;
-    padding:0 0px;
+    padding:0 5px;
     width:150px;
+    display:block;
     text-align:center;
-    border-radius:0px;
+    border-radius:3px;
     cursor:pointer;
 }
 .register-info-box{
@@ -85,7 +87,7 @@ a{
     border: 1px solid #b5b5b5;
     outline: none;
 }
-.login-show input[type="button"] {
+.login-show input[type="submit"] {
     max-width: 150px;
     width: 100%;
     background: #444444;
@@ -134,22 +136,34 @@ a{
     width: 447px;
     height: 100px;
     position: absolute;
-    margin-top: 10%;
-    margin-left: 64%;
+    margin-top: 12%;
+    margin-left: 66%;
 }    
 .olvidado{
-    color: black;
     position: absolute;
-    margin-top: 8%;
-    margin-left: -152px;
+    color: black;
+    margin-top: 55px;
+    margin-left: -190px;
 }
-
 .nocuenta{
     position: absolute;
-    margin-left: -77px;
+    margin-left: -50px;
+    margin-top: 30px;
 }
-.registroclick{
-    margin-top: 41px;
+#label-login {
+    margin-left: -80px;
+    margin-top: 70px;
     position: absolute;
-    margin-left: -126px;
+    font-weight: bold;
+}
+
+.ver {
+    margin-top: -11%;
+    position: absolute;
+    margin-left: 28%;
+}
+
+.eye {
+    width: 17%;
+    height: 10%;
 }

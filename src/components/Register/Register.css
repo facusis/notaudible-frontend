@@ -10,13 +10,15 @@
 	position:relative;
     overflow-y: hidden;
 }
+
 a{
   text-decoration:none;
   color:#444444;
 }
 .login-reg-panel-1{
     position: relative;
-    top: 131px;
+    top: 413px;
+    transform: translateY(-50%);
 	text-align:center;
     width:70%;
 	right:0;left:0;
@@ -42,8 +44,8 @@ a{
 .login-reg-panel-1{
     color:#B8B8B8;
 }
-
- #label-register-1{
+.login-reg-panel-1 #label-login, 
+.login-reg-panel-1 #label-register-1{
     border:1px solid #9E9E9E;
     padding:0 5px;
     width:150px;
@@ -62,6 +64,7 @@ a{
 }
 .register-show {
     margin-top: 17%;
+    margin-left: 25px;
 }
 
 .register-show input[type="text"], .register-show input[type="password"]{
@@ -72,7 +75,7 @@ a{
     outline: none;
     margin: 32px;
 }
-.register-show input[type="button"] {
+.register-show input[type="submit"] {
     max-width: 150px;
     width: 100%;
     background: #444444;
@@ -80,7 +83,6 @@ a{
     border: none;
     padding: 10px;
     text-transform: uppercase;
-    border-radius: 2px;
     float: center;
     cursor:pointer;
 }
@@ -115,14 +117,31 @@ a
     height: 100px;
     position: absolute;
     margin-top: 10%;
-    margin-left: 52px;
+    margin-left: 5%;
+  }
+
+  .tienescuenta{
+    margin-left: 24px;
+    width: 121%;
+  }
+
+  #label-register {
+    margin-top: 16px;
+    position: absolute;
+    margin-left: -10px;
   }
   .tienecuenta{
-    margin-right: -81px;
-    margin-top: 30px;
+      margin-left: 40px;
+      width: 100%;
   }
-  .inc{
-    margin-left: -18px;
-    margin-top: 3%;
+  
+.ver-2 {
+    margin-top: -13%;
     position: absolute;
-  }
+    margin-left: 25%;
+}
+
+.eye-2 {
+    width: 17%;
+    height: 10%;
+}
