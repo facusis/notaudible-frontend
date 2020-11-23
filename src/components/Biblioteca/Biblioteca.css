@@ -1,0 +1,8 @@
+.Conteudo {
+    text-align: center;
+    position:relative;
+    height:80vh;
+    width:100%;
+    color:rgb(247, 252, 251);
+    background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35));
+}
