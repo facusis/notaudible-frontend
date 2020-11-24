@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react';
 import Login from './components/Login/Login';
 import ForgetPass from './components/Login/ForgetPass'
-import Library from './components/Library/Library';
 import Navbar from './components/Navbar/Navbar';
 import Register from './components/Register/Register';
 import Biblioteca from './components/Biblioteca/Biblioteca';
