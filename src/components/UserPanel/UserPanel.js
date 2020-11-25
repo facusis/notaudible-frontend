@@ -9,13 +9,15 @@ const UserPanel = () => {
     const [nicknameInput, setNicknameInput] = useState(false);
     const [aboutInput, setAboutInput] = useState(false);
     
+
+    
     useEffect(() => {
-        fetch("http://localhost:3001/data/user/5fb2e3414de44e534ce85a7b", {
+        fetch("http://localhost:3001/data/user/5fbeb3439a25f9515d1234a5", {
             method: "get",
             headers: {
                 'Content-Type': 'application/json',
                  Accept : 'application/json',
-                 Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTk4MGNiMzI0NzQxMGYxZmI1YmU4NSIsImlhdCI6MTYwNTQ2MjcwM30.7TPmT0qCl-uJFOCp8xWkRUDVrDhgqloK0oiyJARasBc'                
+                 Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYmViMzQzOWEyNWY5NTE1ZDEyMzRhNSIsImlhdCI6MTYwNjMzMzI2M30.kX5oa-VQwCIZi8Li_1iN7-URe4rW529KknpYpnM09o0'                
               },
         }).then((res) => res.json()).then((result) => {setData(result)});
     }, [emailInput, nicknameInput, aboutInput])

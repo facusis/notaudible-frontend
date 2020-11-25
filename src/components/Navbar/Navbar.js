@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import {isLogin, logOut} from '../Utils/isLogin';
+import {isLogin, logOut} from '../../utils/loginUtils';
 
 const Navbar = () => {
     return (
