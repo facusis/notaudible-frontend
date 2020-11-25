@@ -8,7 +8,7 @@ export default function Library() {
     category: '',
   });
 
-  const handleImputChange = (event) => {
+  const handleInputChange = (event) => {
     setData({
       ...data,
       [event.target.name] : event.target.value
@@ -23,9 +23,9 @@ export default function Library() {
     return (
       <div>
           <form>
-          <input type="text" name="title" className="titulo-libro" placeholder="Titulo del libro" required onChange={handleImputChange}/> 
-          <input type="text" name="category" placeholder="Categoria del libro" required onChange={handleImputChange}/>
-          <input type="text" name="author" placeholder="Autor del libro" required onChange={handleImputChange}/>
+          <input type="text" name="title" className="titulo-libro" placeholder="Titulo del libro" required onChange={handleInputChange}/> 
+          <input type="text" name="category" placeholder="Categoria del libro" required onChange={handleInputChange}/>
+          <input type="text" name="author" placeholder="Autor del libro" required onChange={handleInputChange}/>
           <button type="submit">Crear libro</button>
           </form>
 

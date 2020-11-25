@@ -16,7 +16,7 @@ const Login = () => {
  
   //Mostrar constraseña
   const [passwordShown, setPasswordShown] = useState(false);
-  const togglePasswordVisiblity = () => {
+  const togglePasswordVisibility = () => {
     setPasswordShown(passwordShown ? false : true);
   };
 
@@ -26,7 +26,7 @@ const Login = () => {
     password: ''
   })
 
-  const handleImputChange = (event) => {
+  const handleInputChange = (event) => {
     setDatos({
       ...datos,
       [event.target.name] : event.target.value
@@ -69,9 +69,9 @@ const Login = () => {
               <div className="white-panel">
                 <div className="login-show">
                   <h2>Iniciar Sesión</h2>
-                  <input type="text" name="email" placeholder="Correo Electrónico" required onChange={handleImputChange}/>
-                  <input  type={passwordShown ? "text" : "password"} name="password" placeholder="Contraseña" required onChange={handleImputChange}/>
-                  <i onClick={togglePasswordVisiblity} className="ver"><img src="https://image.flaticon.com/icons/png/512/65/65000.png" className="eye" /></i>{" "}
+                  <input type="text" name="email" placeholder="Correo Electrónico" required onChange={handleInputChange}/>
+                  <input  type={passwordShown ? "text" : "password"} name="password" placeholder="Contraseña" required onChange={handleInputChange}/>
+                  <i onClick={togglePasswordVisibility} className="ver"><img src="https://image.flaticon.com/icons/png/512/65/65000.png" className="eye" /></i>{" "}
                   <input type="submit" value="Iniciar Sesión" />
                   <a className="olvidado" onClick={handleClickO}>¿Te has olvidado la contraseña?</a>
                 </div> 
