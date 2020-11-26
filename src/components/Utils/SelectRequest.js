@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from "react";
 
-const SelectRequest = () => {
+const SelectRequest = ({setCategory, request}) => {
 
     const [data, setData] = useState();
-    const [selectValue, setSelectValue] = useState();
+    console.log(request);
 
     useEffect(() => {
-        fetch("http://localhost:3001/data/book", {
+        fetch("http://localhost:3001/data/category", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
                 Authorization:
-                    "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTg4MDM5YTFhYTdmMDMwY2E1ZTczMSIsImlhdCI6MTYwMzgyOTkwNX0.L3OhDIM07ihrCn4mHnndiIS8KivQ2jFzIAYrg7usE4Q",
+                    "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYmM2OGYyNjZjNWRhYjgxNWExM2I2YyIsImlhdCI6MTYwNjE4MzYzOX0.68JNkWLmClPi5QyH7Kq8zw7SjfoAXx_dG5HOVScGDN0",
             },
-        }).then((res) => res.json()).then((result) => { setData(result) });
+        }).then(res => res.json()).then(result => { setData(result) });
     }, []);
 
     return (
         <select
-            onChange={ (event) => { setSelectValue(event.target.value) } } 
+            onChange={event => setCategory(event.target.value)}
         >
             {data && data.map((item) => (
-                <option key={item.title} value={item.title}>
-                    {item.title}
+                <option key={item.name} value={item._id}>
+                    {item.name}
                 </option>
             ))}
         </select>

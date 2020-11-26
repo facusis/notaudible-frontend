@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import './Library.css';
+import SelectRequest from '../Utils/SelectRequest';
 
 export default function Library() {
-  const [data, setData] = useState({
-    title: '',
-    author: '',
-    category: '',
-  });
+  const [data, setData] = useState({});
+  const [category, setCategory] = useState()
 
   const handleImputChange = (event) => {
     setData({
@@ -17,16 +15,16 @@ export default function Library() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(category);
 
-    //localhost:3000/data/User
-    fetch('http://localhost:3001/data/book',{
+    fetch('http://localhost:3001/upload',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept' : 'application/json',
-        'Authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTQzZTcwY2U3Zjk3MmIwZDVjMjM0NyIsImlhdCI6MTYwNTYzOTIxMX0.auP3ifPMSB0mJLpFUEFVzUNSxrInEVjHVeU22TEbWfg'
+        'Authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYmM2OGYyNjZjNWRhYjgxNWExM2I2YyIsImlhdCI6MTYwNjE4MzYzOX0.68JNkWLmClPi5QyH7Kq8zw7SjfoAXx_dG5HOVScGDN0'
       },
-      body: JSON.stringify({title: data.title, author: data.author, category: data.category})
+      body: JSON.stringify({title: data.title, author: data.author, category: category})
     }).then(res => res.json()).then((result) => {console.log(result)});
   }
 
@@ -36,8 +34,7 @@ export default function Library() {
             <label>Titulo del libro</label><br/>
           <input className={'input-library'} type="text" name="title" placeholder="Titulo del libro" required onChange={handleImputChange}/> <br/>
           <label>Categoria</label><br/>
-
-          <input className={'input-library'} type="text" name="category" placeholder="Categoria del libro" required onChange={handleImputChange}/> <br/>
+          <SelectRequest setCategory={setCategory} request="category"></SelectRequest><br/>
           <label>Autor</label><br/>
           <input className={'input-library'} type="text" name="author" placeholder="Autor del libro" required onChange={handleImputChange}/><br/>
           <button onClick={handleSubmit}>Crear libro</button>
