@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { useHistory } from "react-router-dom";
+import {fetchResource} from "../../api";
 import "./Register.css";
 
 const Register = () => {
@@ -30,17 +31,12 @@ const Register = () => {
 
   const sendForm = (event) => {
     event.preventDefault();
-    console.log(datos.email + ' ' + datos.password)
 
-    //localhost:3000/data/User
-    fetch('http://localhost:3001/register',{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept' : 'application/json'
-      },
-      body: JSON.stringify({email: datos.email, password: datos.password, nickname: datos.nickname})
-    }).then(res => res.json()).then((result) => {console.log(result)});
+    fetchResource('register','','POST', {
+      email: datos.email, 
+      password: datos.password, 
+      nickname: datos.nickname
+    }).then((result) => {console.log(result)});
   }
 
   return (

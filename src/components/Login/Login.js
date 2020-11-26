@@ -1,6 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import { useHistory } from "react-router-dom";
+import {fetchResource} from "../../api";
 import './Login.css';
+
+
 
 const Login = () => {
 
@@ -34,25 +37,18 @@ const Login = () => {
   }
 
   const sendForm = (event) => {
-    event.preventDefault();
-    console.log(datos.email + ' ' + datos.password)
-
-    //localhost:3000/data/User
-    fetch('http://localhost:3001/login',{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify({email: datos.email, password: datos.password})
-    }).then(res => res.json())
-    .then((result) => {
-      console.log(result);
-      localStorage.setItem("token", JSON.stringify(result.token));
+		event.preventDefault();
+		
+    fetchResource('login','','POST', {
+			email: datos.email, 
+			password: datos.password
+		}).then((result) => {
+      localStorage.setItem("token", result.token);
+      localStorage.setItem("id", result.id);
       if (!localStorage.getItem("token")) {
         window.alert("No se ha guardado token");
       } else {
-        window.alert(JSON.stringify(result.token));
+        console.log(result);
       }
     });
   }
