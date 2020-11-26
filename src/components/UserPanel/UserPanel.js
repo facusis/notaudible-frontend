@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './UserPanel.css';
 import InputUpdate from '../Utils/InputUpdate';
+import {fetchResource} from "../../api";
 
 const UserPanel = () => {
 
@@ -12,14 +13,7 @@ const UserPanel = () => {
 
     
     useEffect(() => {
-        fetch("http://localhost:3001/data/user/5fbeb3439a25f9515d1234a5", {
-            method: "get",
-            headers: {
-                'Content-Type': 'application/json',
-                 Accept : 'application/json',
-                 Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYmViMzQzOWEyNWY5NTE1ZDEyMzRhNSIsImlhdCI6MTYwNjMzMzI2M30.kX5oa-VQwCIZi8Li_1iN7-URe4rW529KknpYpnM09o0'                
-              },
-        }).then((res) => res.json()).then((result) => {setData(result)});
+        fetchResource('data/user', localStorage.getItem('id'), 'GET').then((result) => {setData(result)});
     }, [emailInput, nicknameInput, aboutInput])
 
     const changeState = (event) => {
