@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import {fetchResource} from "../../api";
 
-const SelectRequest = () => {
+const SelectRequest = ({setCategory, request}) => {
 
     const [data, setData] = useState();
-    const [selectValue, setSelectValue] = useState();
 
     useEffect(() => {
         fetch("http://localhost:3001/data/category", {
@@ -19,10 +19,14 @@ const SelectRequest = () => {
 
     return (
         <select
-            onChange={ (event) => { setSelectValue(event.target.value) } } 
+            onChange={event => setCategory(event.target.value)}
         >
             {data && data.map((item) => (
+<<<<<<< HEAD
                 <option key={item.name} value={item.name}>
+=======
+                <option key={item.name} value={item._id}>
+>>>>>>> dbe687704ffc10a8b6d767d9272d52aa74f069e6
                     {item.name}
                 </option>
             ))}
