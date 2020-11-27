@@ -43,12 +43,13 @@ const Login = () => {
 			email: datos.email, 
 			password: datos.password
 		}).then((result) => {
-      localStorage.setItem("token", result.token);
-      localStorage.setItem("id", result.id);
-      if (!localStorage.getItem("token")) {
+      if (!result.token) {
         window.alert("No se ha guardado token");
       } else {
-        console.log(result);
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("id", result.id);
+        window.alert(localStorage.getItem("token"));
+        history.push("/biblotecas");
       }
     });
   }
@@ -72,7 +73,6 @@ const Login = () => {
                   <a className="olvidado" onClick={handleClickO}>¿Te has olvidado la contraseña?</a>
                 </div> 
               </div>
-
 
             </div>
       </form>
