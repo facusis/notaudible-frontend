@@ -2,17 +2,27 @@ import './App.css';
 import React from 'react';
 import Login from './components/Login/Login';
 import ForgetPass from './components/Login/ForgetPass'
-import Library from './components/Library/Library';
 import Navbar from './components/Navbar/Navbar';
 import Register from './components/Register/Register';
 import Biblioteca from './components/Biblioteca/Biblioteca';
+import UserPanel from './components/UserPanel/UserPanel';
 import Home from './components/Home/Home';
 import {BrowserRouter,
 Link,
 Switch,
-Route
+Route,
+Redirect
 } from 'react-router-dom';
-import {HOME, BIBLIOTECA, REGISTER, LOGIN} from './routes';
+import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOAD} from './routes';
+import {isLogin} from './components/Utils/isLogin';
+import UploadAudio from './components/UploadAudio/UploadAudio.view';
+
+const PrivateRoute = ({ component: Component, path }) => (
+  <Route path={path} render={() => {
+    return isLogin() ? <Component /> : <Redirect to="/" />;
+    }}
+  />
+)
 
 function App() {
   return (
@@ -24,6 +34,8 @@ function App() {
           <Route path={LOGIN} component={Login} />
           <Route path={REGISTER} component={Register} />
           <Route path={BIBLIOTECA} component={Biblioteca} />
+          <PrivateRoute path={PERFIL} component={UserPanel} />
+          <PrivateRoute path={UPLOAD} component={UploadAudio} />
         </Switch>
       </BrowserRouter>
     </div>

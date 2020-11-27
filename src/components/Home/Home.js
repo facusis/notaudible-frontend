@@ -9,7 +9,7 @@ const Home = () => {
     <div class="slider" id="slider">
       <div class="slides current">
         <h1>Escucha todo tipo</h1>
-        <h1>de audiolibro</h1>
+        <h1>de audiolibros</h1>
       </div>
     </div>
   </div>

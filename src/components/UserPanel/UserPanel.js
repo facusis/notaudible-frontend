@@ -13,9 +13,9 @@ const UserPanel = () => {
         fetch("http://localhost:3001/data/user/5fb2e3414de44e534ce85a7b", {
             method: "get",
             headers: {
-                'Content-Type': 'application/json',
-                 Accept : 'application/json',
-                 Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTk4MGNiMzI0NzQxMGYxZmI1YmU4NSIsImlhdCI6MTYwNTQ2MjcwM30.7TPmT0qCl-uJFOCp8xWkRUDVrDhgqloK0oiyJARasBc'                
+                "Content-Type": "application/json",
+                 Accept : "application/json",
+                 Authorization: "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTk4MGNiMzI0NzQxMGYxZmI1YmU4NSIsImlhdCI6MTYwNTQ2MjcwM30.7TPmT0qCl-uJFOCp8xWkRUDVrDhgqloK0oiyJARasBc"              
               },
         }).then((res) => res.json()).then((result) => {setData(result)});
     }, [emailInput, nicknameInput, aboutInput])
@@ -28,7 +28,7 @@ const UserPanel = () => {
         if ((event.target.id) === "nickname")
             return setNicknameInput(true);
         
-        if ((event.target.id) == "about")
+        if ((event.target.id) === "about")
             return setAboutInput(true);
     }
 
