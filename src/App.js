@@ -14,12 +14,8 @@ Switch,
 Route,
 Redirect
 } from 'react-router-dom';
-<<<<<<< HEAD
-import {HOME, BIBLIOTECA, REGISTER, LOGIN, UPLOAD} from './routes';
-=======
 import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK} from './routes';
 
->>>>>>> dbe687704ffc10a8b6d767d9272d52aa74f069e6
 
 function App() {
   return (
@@ -31,12 +27,8 @@ function App() {
           <Route path={LOGIN} component={Login} />
           <Route path={REGISTER} component={Register} />
           <Route path={BIBLIOTECA} component={Biblioteca} />
-<<<<<<< HEAD
-          <Route path={UPLOAD} component={Library} />
-=======
           <PrivateRoute path={PERFIL} component={UserPanel} />
           <PrivateRoute path={UPLOADBOOK} component={UploadBook} />
->>>>>>> dbe687704ffc10a8b6d767d9272d52aa74f069e6
         </Switch>
       </BrowserRouter>
     </div>
