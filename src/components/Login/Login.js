@@ -48,11 +48,13 @@ const Login = () => {
     }).then(res => res.json())
     .then((result) => {
       console.log(result);
-      localStorage.setItem("token", JSON.stringify(result.token));
-      if (!localStorage.getItem("token")) {
+      if (!result.token) {
         window.alert("No se ha guardado token");
+        history.push("/login");
       } else {
+        localStorage.setItem("token", JSON.stringify(result.token));
         window.alert(JSON.stringify(result.token));
+        history.push("/bibloteca");
       }
     });
   }
