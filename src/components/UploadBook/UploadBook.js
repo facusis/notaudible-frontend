@@ -27,6 +27,7 @@ const UploadBook = () => {
 
     return (
       <div>
+        <br></br>
           <input className={'input-library'} type="text" name="title" placeholder="Titulo del libro" required onChange={handleImputChange}/> <br/>
           <label>Categoria</label><br/>
           <SelectRequest setCategory={setCategory} request="category"></SelectRequest><br/>

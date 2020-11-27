@@ -11,12 +11,13 @@ const Navbar = () => {
                 <Link to="/biblioteca" className='nav-links'>Bibliotecas</Link>
                 {isLogin() ? 
                     <div className='nav-links'> 
+                        <Link to="/upload"> Subir audiolibro </Link> 
                         <Link to="/perfil"> Perfil </Link> 
-                        <Link to="/perfil" onClick={logOut}> Cerrar Sesión </Link> 
+                        <Link className="nav-cerrarsesion" to="/perfil" onClick={logOut}> Cerrar Sesión </Link> 
                     </div> : 
                     <div className='nav-links'> 
                         <Link to="/register"> Register </Link>
-                        <Link to="/login"> Login </Link>
+                        <Link className="nav-login" to="/login"> Login </Link>
                     </div>
                 }
             </div>
