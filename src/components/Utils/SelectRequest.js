@@ -22,11 +22,7 @@ const SelectRequest = ({setCategory, request}) => {
             onChange={event => setCategory(event.target.value)}
         >
             {data && data.map((item) => (
-<<<<<<< HEAD
                 <option key={item.name} value={item.name}>
-=======
-                <option key={item.name} value={item._id}>
->>>>>>> dbe687704ffc10a8b6d767d9272d52aa74f069e6
                     {item.name}
                 </option>
             ))}
