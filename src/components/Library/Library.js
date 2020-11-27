@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import './Library.css';
+import '../Utils/SelectRequest'
+import SelectRequest from "../Utils/SelectRequest";
 
 export default function Library() {
   const [data, setData] = useState({
@@ -30,18 +32,17 @@ export default function Library() {
     }).then(res => res.json()).then((result) => {console.log(result)});
   }
 
-
     return (
       <div>
             <label>Titulo del libro</label><br/>
           <input className={'input-library'} type="text" name="title" placeholder="Titulo del libro" required onChange={handleImputChange}/> <br/>
           <label>Categoria</label><br/>
-
+          <SelectRequest></SelectRequest> 
           <input className={'input-library'} type="text" name="category" placeholder="Categoria del libro" required onChange={handleImputChange}/> <br/>
           <label>Autor</label><br/>
           <input className={'input-library'} type="text" name="author" placeholder="Autor del libro" required onChange={handleImputChange}/><br/>
           <button onClick={handleSubmit}>Crear libro</button>
-
+         
       </div>
     )
   }

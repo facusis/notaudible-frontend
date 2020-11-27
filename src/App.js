@@ -12,7 +12,7 @@ Link,
 Switch,
 Route
 } from 'react-router-dom';
-import {HOME, BIBLIOTECA, REGISTER, LOGIN} from './routes';
+import {HOME, BIBLIOTECA, REGISTER, LOGIN, UPLOAD} from './routes';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
           <Route path={LOGIN} component={Login} />
           <Route path={REGISTER} component={Register} />
           <Route path={BIBLIOTECA} component={Biblioteca} />
+          <Route path={UPLOAD} component={Library} />
         </Switch>
       </BrowserRouter>
     </div>

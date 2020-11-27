@@ -6,7 +6,7 @@ const SelectRequest = () => {
     const [selectValue, setSelectValue] = useState();
 
     useEffect(() => {
-        fetch("http://localhost:3001/data/book", {
+        fetch("http://localhost:3001/data/category", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -22,8 +22,8 @@ const SelectRequest = () => {
             onChange={ (event) => { setSelectValue(event.target.value) } } 
         >
             {data && data.map((item) => (
-                <option key={item.title} value={item.title}>
-                    {item.title}
+                <option key={item.name} value={item.name}>
+                    {item.name}
                 </option>
             ))}
         </select>
