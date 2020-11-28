@@ -26,13 +26,14 @@ const UploadBook = () => {
     }
 
     return (
-      <div>
+      <div className={"uploadForm"}>
+          <label className={"labelUpload"}>Titulo</label><br/>
           <input className={'input-library'} type="text" name="title" placeholder="Titulo del libro" required onChange={handleImputChange}/> <br/>
-          <label>Categoria</label><br/>
+          <label className={"labelUpload"}>Categoria</label><br/>
           <SelectRequest setCategory={setCategory} request="category"></SelectRequest><br/>
-          <label>Autor</label><br/>
+          <label className={"labelUpload"}>Autor</label><br/>
           <input className={'input-library'} type="text" name="author" placeholder="Autor del libro" required onChange={handleImputChange}/><br/>
-          <button onClick={handleSubmit}>Crear libro</button>
+          <button className={"submitButton"}onClick={handleSubmit}>Crear libro</button>
       </div>
     )
   }

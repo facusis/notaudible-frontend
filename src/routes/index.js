@@ -10,7 +10,6 @@ export {
     BIBLIOTECA,
     LOGIN,
     REGISTER,
-    UPLOAD,
     PERFIL,
     UPLOADBOOK,
 } 

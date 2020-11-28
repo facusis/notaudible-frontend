@@ -1,18 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-.input-library{
-    width: 95%;
+
+.uploadForm{
+    background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.input-library { 
+    width: 80%;
     margin: 0 auto;
     height: 2em;
     padding-left: 10px;
     border-radius: 5px;
+    background-color: white;
+    border: 1px solid grey;
 }
 
-label{
+.labelUpload{
+    margin:0 auto;
+    width:80%;
     text-align: left;
     font-family: 'Space Grotesk',  sans-serif;
+
 }
 
 .form-library{
     margin-top: 10vh;
+}
+
+.submitButton{
+  width: 40%;
+  margin: 0 auto;
+  background: #3d2a5c;
+  font-weight: bold;
+  margin-top: 40px;
+  border: none;
+  color: white;
+  height: 3em;
+  border-radius: 5px;
 }
