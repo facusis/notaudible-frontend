@@ -1,8 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import {fetchResource} from "../../api";
-import './Login.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
 
