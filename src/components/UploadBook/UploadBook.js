@@ -21,20 +21,28 @@ const UploadBook = () => {
         fetchResource('upload','','POST', {
             title: data.title, 
             author: data.author, 
-            category: category
+            category: category,
+            sinopsis: data.sinopsis,
         }).then((result) => {console.log(result)});
     }
 
     return (
-      <div className={"uploadForm"}>
+            
+          <div className={"uploadForm"}>
+          <label className={"labelUpload tituloUpload"}>SUBE UN LIBRO</label><br/>
           <label className={"labelUpload"}>Titulo</label><br/>
-          <input className={'input-library'} type="text" name="title" placeholder="Titulo del libro" required onChange={handleImputChange}/> <br/>
+          <input className={'input-library'} type="text" name="title"required onChange={handleImputChange}/> <br/>
           <label className={"labelUpload"}>Categoria</label><br/>
           <SelectRequest setCategory={setCategory} request="category"></SelectRequest><br/>
           <label className={"labelUpload"}>Autor</label><br/>
-          <input className={'input-library'} type="text" name="author" placeholder="Autor del libro" required onChange={handleImputChange}/><br/>
+          <input className={'input-library'} type="text" name="author" required onChange={handleImputChange}/><br/>
+          <label className={"labelUpload"}>Sinopsis</label><br/>
+          <input className={'sinopsis'} type="text" name="sinopsis" required onChange={handleImputChange}/><br/>
+          <label className={"labelUpload"}>Archivo</label><br/>
+          <input className={'input-library'} type="file" name="archivo"required onChange={handleImputChange}/><br/>
           <button className={"submitButton"}onClick={handleSubmit}>Crear libro</button>
       </div>
+      
     )
   }
 
