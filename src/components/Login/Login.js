@@ -54,12 +54,14 @@ const Login = () => {
   }
   return (
     <Fragment>
+      
     <div className="body-1">
+    <div className="container-fluid">
       <form onSubmit={sendForm}>
       <div className="login-reg-panel">
       <div className="logo-l"></div>			
               <div className="register-info-box">
-                <h2 className="nocuenta">¿No tienes cuenta?</h2>
+                <h5 className="nocuenta">¿No tienes cuenta?</h5>
                 <label id="label-login" for="log-login-show" onClick={handleClickR}>Registrarse</label>
               </div>
               <div className="white-panel">
@@ -75,7 +77,7 @@ const Login = () => {
 
             </div>
       </form>
-      </div>
+      </div></div>
     </Fragment>
   )
 }

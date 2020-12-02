@@ -7,15 +7,19 @@ const Navbar = () => {
     return (
         <nav className='navbar'>
             <div className='navbar-container'>
-                <Link to="/" className='nav-links'>Home</Link>
-                <Link to="/biblioteca" className='nav-links'>Bibliotecas</Link>
+                
                 {isLogin() ? 
                     <div className='nav-links'> 
-                        <Link to="/upload"> Subir audiolibro </Link> 
+                        <Link to="/" >Home</Link>
+                        <Link to="/biblioteca" >Bibliotecas</Link>
+                        <Link to="/biblioteca/infoAudioLibro"> Ver Audiolibro </Link>
+                        <Link to="/upload"> Subir Audiolibro </Link> 
                         <Link to="/perfil"> Perfil </Link> 
                         <Link className="nav-cerrarsesion" to="/perfil" onClick={logOut}> Cerrar Sesión </Link> 
                     </div> : 
                     <div className='nav-links'> 
+                        <Link to="/" >Home</Link>
+                        <Link to="/biblioteca" >Bibliotecas</Link>
                         <Link to="/register"> Register </Link>
                         <Link className="nav-login" to="/login"> Login </Link>
                     </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {fetchResource} from "../../api";
+import '../UploadBook/UploadBook.css';
 
 const SelectRequest = ({setCategory, request}) => {
 
@@ -11,7 +12,7 @@ const SelectRequest = ({setCategory, request}) => {
 
     return (
         <select
-            onChange={event => setCategory(event.target.value)}
+            onChange={event => setCategory(event.target.value)} className="form-control"
         >
             {data && data.map((item) => (
                 <option key={item.name} value={item._id}>

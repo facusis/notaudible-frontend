@@ -30,27 +30,27 @@ const UserPanel = () => {
 
     return (
     <div className="box">
-        <br></br>
-        Email:
+        <div className="containerbox">
+        <div>Email:</div>
         {!emailInput ? 
             <div> {data && data.email} 
                 <a id="email" onClick={changeState}> (change)</a>
-            </div> : <InputUpdate request="email" setInput={setEmailInput}></InputUpdate>
+            </div> : 
+            <InputUpdate request="email" setInput={setEmailInput}></InputUpdate>
         }
-        <br></br>
-        Nickname:
+        <div>Nickname:</div>
         {!nicknameInput ? 
             <div> {data && data.nickname} 
                 <a id="nickname" onClick={changeState}> (change)</a>
             </div> : <InputUpdate request="nickname" setInput={setNicknameInput}></InputUpdate>
         }
-        <br></br>
-        About:
+        <div>About:</div>
         {!aboutInput ? 
             <div> {data && data.about} 
                 <a id="about" onClick={changeState}> (change)</a>
             </div> : <InputUpdate request="about" setInput={setAboutInput}></InputUpdate>
         }
+    </div>
     </div>
     );
 };
