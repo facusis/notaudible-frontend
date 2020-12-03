@@ -9,6 +9,8 @@ import Home from './components/Home/Home';
 import UploadBook from './components/UploadBook/UploadBook';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Forgetpass from './components/Login/ForgetPass';
+import PageUploadBook from './components/UploadBook/PageUploadBook';
+import Footer from './components/Footer/Footer';
 import {BrowserRouter,
 Switch,
 Route
@@ -27,10 +29,13 @@ function App() {
           <Route path={REGISTER} component={Register} />
           <Route path={BIBLIOTECA} component={Biblioteca} />
           <PrivateRoute path={PERFIL} component={UserPanel} />
-          <PrivateRoute path={UPLOADBOOK} component={UploadBook} />
+          <PrivateRoute path={UPLOADBOOK} component={PageUploadBook} />
           <Route path={FORGETPASS} exact component={Forgetpass} />
         </Switch>
       </BrowserRouter>
+      <div className="content-wrap">  
+      </div>
+      <Footer />
     </div>
   );
 }
