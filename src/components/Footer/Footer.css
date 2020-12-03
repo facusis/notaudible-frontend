@@ -1,28 +1,57 @@
 
 .main-footer{
     background-color: #333c4e;
-    padding-top: 10em;
+    padding-top: 7em;
     position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: 0%;
 }
 
 .container{
     background-color: #333c4e;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Space Grotesk',  sans-serif;
+
 }
 
 .col{
     text-align: left;
     margin-left: 20px;
     font-family: 'Space Grotesk',  sans-serif;
-    color: white
+    color: white;
+    list-style: none;
 }
 
 .col1{
     text-align: right;
     margin-right: 20px;    
     font-family: 'Space Grotesk',  sans-serif;
-    color: white
+    color: white;
+    list-style: none;
+
+}
+.list-unstyled{
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 50px;
+    font-family: 'Space Grotesk',  sans-serif;
+    font-weight: 100;
+    color: white;
+    list-style: none;
+
+}
+
+.list-unstyled1{
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Space Grotesk',  sans-serif;
+    font-weight: 100;
+    color: white;
+    list-style: none;
 
 }
 
@@ -45,26 +74,6 @@
     
 }
 
-.list-unstyled{
-    text-align: left;
-    margin-left: 20px;
-    margin-top: 50px;
-    font-family: 'Space Grotesk',  sans-serif;
-    font-weight: 100;
-    color: white
-
-}
-
-.list-unstyled1{
-    text-align: right;
-    margin-right: 20px;
-    margin-top: 50px;
-    font-family: 'Space Grotesk',  sans-serif;
-    font-weight: 100;
-    color: white
-
-}
-
 .col-small{
     font-family: 'Space Grotesk',  sans-serif;
     
@@ -73,6 +82,8 @@
 
 .letras{
     color: rosybrown;
+    font-family: 'Space Grotesk',  sans-serif;
+
 }
 
 .frase{

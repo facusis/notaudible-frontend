@@ -11,6 +11,7 @@
     border-radius: 20px;
     position: relative;
     top: 20px;
+    bottom: 20px;
     z-index:2;
     
 }
@@ -29,11 +30,12 @@
 .sinopsis {
     width: 90%;
     margin: 0 5%;
-    height: 2em;
+    height: 6em;
     padding-left: 10px;
     border-radius: 8px;
     background-color: white;
     border: none;
+    resize: auto;
 }
 
 
