@@ -1,29 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import SelectRequest from '../Utils/SelectRequest';
-import {fetchResource} from "../../api";
 import './UploadBook.css';
 
 const UploadBook = () => {
 
-  const [data, setData] = useState({});
-  const [category, setCategory] = useState()
+const handleSubmit = (files) => {
+    const url = `http://localhost:3001/track`;
 
-  const handleImputChange = (event) => {
-    setData({
-      ...data,
-      [event.target.name] : event.target.value
-    })
-  }
+    if (files) {
+      const formData = new FormData();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+      formData.append('track', files[0]);
+      formData.append('name', data.title);
+      formData.append('title', data.title);
+      formData.append('category', category);
+      formData.append('author', data.author);
 
-    fetchResource('upload','','POST', {
-      title: data.title, 
-      author: data.author, 
-      category: category,
-      
-    }).then((result) => {console.log(result)});
+      const options = {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Authorization: `bearer ${localStorage.getItem('token')}`
+        },
+        mode: 'cors',
+      };
+
+      fetch(url, options)
+        .then((response) => {
+          if (response.status === 200) {
+            return response.json();
+          }
+          return Promise.reject(response.status);
+        })
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => console.log(error));
+    }
   }
 
   return (
@@ -84,7 +97,6 @@ const UploadBook = () => {
         Crear libro
       </button>
     </div>
-
   )
 }
 
