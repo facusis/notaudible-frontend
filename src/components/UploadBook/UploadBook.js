@@ -4,7 +4,18 @@ import './UploadBook.css';
 
 const UploadBook = () => {
 
-const handleSubmit = (files) => {
+  const [data, setData] = useState({});
+  const [category, setCategory] = useState();
+  const fileInputEl = useRef(null);
+
+  const handleImputChange = (event) => {
+    setData({
+      ...data,
+      [event.target.name] : event.target.value
+    })
+  }
+
+  const handleSubmit = (files) => {
     const url = `http://localhost:3001/track`;
 
     if (files) {
@@ -79,21 +90,22 @@ const handleSubmit = (files) => {
         className={'sinopsis'} 
         type="text" 
         name="sinopsis" 
-        required onChange={handleImputChange}
+        required
       /><br/>
       <label className={"labelUpload"}>
         Archivo
       </label><br/>
       <input 
         className={'input-library'} 
-        type="file" 
-        name="archivo"
-        required 
-        onChange={handleImputChange}
+        type="file"
+        id="fileupload"
+        accept=".mp3,audio/*"
+        ref={fileInputEl}
+        required
         /><br/>
       <button 
         className={"submitButton"}
-        onClick={handleSubmit}>
+        onClick={ () => handleSubmit(fileInputEl.current.files) }>
         Crear libro
       </button>
     </div>
