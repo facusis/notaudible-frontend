@@ -13,6 +13,7 @@ const SelectRequest = ({setCategory, request}) => {
         <select
             onChange={event => setCategory(event.target.value)}
         >
+        <option value="null" key="null">Selecciona una categoria PLZ</option>
             {data && data.map((item) => (
                 <option key={item.name} value={item._id}>
                     {item.name}
