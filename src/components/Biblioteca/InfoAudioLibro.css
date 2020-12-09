@@ -13,6 +13,7 @@
 .boxInfo {
 
     display: flex;
+    flex: 1 0 1;
     height: 100vh;
     flex-wrap: wrap; 
     flex-direction: row;
@@ -25,7 +26,8 @@
 }
 
 .bookBoxImage {
-    flex: 0 300px 500px;
+    flex: 1;
+    min-width: 350px;
     min-height: 400px;
     max-height: 500px;
     background-color: rgba(30, 30, 30, 0.7);

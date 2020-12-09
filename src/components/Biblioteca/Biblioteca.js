@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './InfoAudioLibro.css';
 import {fetchResource} from "../../api";
 import { AddComment } from '../AddComment/AddComment';
+import { CommentsViewer } from '../CommentsViewer/CommentsViewer';
 
 const Biblioteca = () => {
 
@@ -31,9 +32,9 @@ const Biblioteca = () => {
 
 El silencio de los corderos fue llevada al cine en 1991, y ganó los Premios Oscar a las categorías mejor película, mejor dirección (Jonathan Demme), mejor actriz (Jodie Foster), mejor actor (Anthony Hopkins) y mejor guion adaptado.</div>
             </div>
-
+                <CommentsViewer tituloComment={data}/>
                 <div className="AddCommentBox">
-                <AddComment/>
+                <AddComment userId="5fc13ad510b3225ac01e2f26"/>
                 </div>
                 </div>
                 </div>
