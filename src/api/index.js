@@ -5,8 +5,6 @@ export const fetchResource = (resource, id, method, data, options={}, headers={}
         method: method,
     }
 
-
-
     const defaultHeaders = {
         "Content-Type": "application/json",
         Accept: "application/json",

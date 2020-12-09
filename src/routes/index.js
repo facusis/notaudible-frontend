@@ -4,6 +4,7 @@ const LOGIN = '/login';
 const REGISTER = '/register';
 const PERFIL = '/perfil';
 const UPLOADBOOK = '/upload';
+const FORGETPASS = '/login/forgetPass';
 
 export {
     HOME,
@@ -12,4 +13,5 @@ export {
     REGISTER,
     PERFIL,
     UPLOADBOOK,
+    FORGETPASS
 } 

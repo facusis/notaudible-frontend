@@ -8,13 +8,12 @@ import UserPanel from './components/UserPanel/UserPanel';
 import Home from './components/Home/Home';
 import UploadBook from './components/UploadBook/UploadBook';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Forgetpass from './components/Login/ForgetPass';
 import {BrowserRouter,
-Link,
 Switch,
-Route,
-Redirect
+Route
 } from 'react-router-dom';
-import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK} from './routes';
+import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK, FORGETPASS} from './routes';
 
 
 function App() {
@@ -24,11 +23,12 @@ function App() {
         <Navbar />
         <Switch>
           <Route path={HOME} exact component={Home} />
-          <Route path={LOGIN} component={Login} />
+          <Route path={LOGIN} exact component={Login} />
           <Route path={REGISTER} component={Register} />
           <Route path={BIBLIOTECA} component={Biblioteca} />
           <PrivateRoute path={PERFIL} component={UserPanel} />
           <PrivateRoute path={UPLOADBOOK} component={UploadBook} />
+          <Route path={FORGETPASS} exact component={Forgetpass} />
         </Switch>
       </BrowserRouter>
     </div>
