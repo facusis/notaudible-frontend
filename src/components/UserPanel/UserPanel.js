@@ -29,29 +29,39 @@ const UserPanel = () => {
     }
 
     return (
-    <div className="box">
-        <br></br>
-        Email:
+        <div className="box">
+        <div className="containerbox">
+        <div className="sectionNote"> Modifica los detalles de la configuración de tu cuenta de <text style={{ fontWeight: 'bolder' }}>NotAudible</text></div>
+        <div>
+            <h3>Email</h3>
         {!emailInput ? 
             <div> {data && data.email} 
                 <a id="email" onClick={changeState}> (change)</a>
             </div> : <InputUpdate request="email" setInput={setEmailInput}></InputUpdate>
         }
-        <br></br>
-        Nickname:
+        </div>
+        <div>
+            <h3>Nickname</h3>
         {!nicknameInput ? 
             <div> {data && data.nickname} 
                 <a id="nickname" onClick={changeState}> (change)</a>
             </div> : <InputUpdate request="nickname" setInput={setNicknameInput}></InputUpdate>
         }
-        <br></br>
-        About:
+        </div>
+        <div>
+            <h3>About</h3>
         {!aboutInput ? 
             <div> {data && data.about} 
                 <a id="about" onClick={changeState}> (change)</a>
             </div> : <InputUpdate request="about" setInput={setAboutInput}></InputUpdate>
         }
+        </div>
+        
+        <div className="underlineDecoration"></div>
     </div>
+    
+    </div>
+    
     );
 };
 

@@ -3,6 +3,7 @@
     background-color: #1f1f1e;
     font-size: 1.2rem;
     position: sticky;
+    z-index: 10;
     top: 0;
     z-index:3;
     width: 100%;
