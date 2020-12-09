@@ -19,7 +19,7 @@ export const AddComment = (props) => {
             method: 'POST',
             body: JSON.stringify({
                 comment ,
-                id: props.userId,
+                id: localStorage.getItem('id'),
                 time: new Date(),
             }),
             headers: {
