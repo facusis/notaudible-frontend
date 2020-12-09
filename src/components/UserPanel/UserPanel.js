@@ -24,7 +24,7 @@ const UserPanel = () => {
         if ((event.target.id) === "nickname")
             return setNicknameInput(true);
         
-        if ((event.target.id) == "about")
+        if ((event.target.id) === "about")
             return setAboutInput(true);
     }
 

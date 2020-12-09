@@ -11,11 +11,11 @@ const InputUpdate = ({request, setInput}) => {
 
     const sendForm = (event) => {
 
-    fetchResource ('data/user',localStorage.getItem('id'), 'PUT', {
-        [request]: data
-    }).then((result) => { console.log(result) });
+        fetchResource ('data/user',localStorage.getItem('id'), 'PUT', {
+            [request]: data
+        }).then((result) => { console.log(result) });
 
-    setInput(false);
+        setInput(false);
     }
 
     return (

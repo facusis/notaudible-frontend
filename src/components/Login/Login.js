@@ -1,10 +1,14 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useContext } from 'react';
 import { useHistory } from "react-router-dom";
 import {fetchResource} from "../../api";
+import './Login.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LogedContext from '../../LogedContext';
 
 const Login = () => {
 
   let history = useHistory();
+  const loged = useContext(LogedContext);
 
   function handleClickR() {
     history.push("/register");
@@ -45,11 +49,12 @@ const Login = () => {
       } else {
         localStorage.setItem("token", result.token);
         localStorage.setItem("id", result.id);
-        window.alert(localStorage.getItem("token"));
+        loged.setLoged(true);
         history.push("/biblotecas");
       }
     });
   }
+
   return (
     <Fragment>
     <div className="body-1">
@@ -70,7 +75,6 @@ const Login = () => {
                   <a className="olvidado" onClick={handleClickO}>¿Te has olvidado la contraseña?</a>
                 </div> 
               </div>
-
             </div>
       </form>
       </div>
