@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import { useParams } from "react-router-dom";
 
 const ResetPass = () => {
 
