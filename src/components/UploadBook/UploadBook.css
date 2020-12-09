@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
-  
   
 .uploadForm{
     width: 35%;
@@ -11,7 +9,6 @@
     border-radius: 20px;
     position: relative;
     top: 20px;
-    bottom: 20px;
     z-index:2;
     
 }
@@ -30,12 +27,11 @@
 .sinopsis {
     width: 90%;
     margin: 0 5%;
-    height: 6em;
+    height: 2em;
     padding-left: 10px;
     border-radius: 8px;
     background-color: white;
     border: none;
-    resize: auto;
 }
 
 
@@ -75,4 +71,24 @@
     padding-left: 5%;
     border-radius: 20px 20px 0 0;
     font-weight: bold;
+}
+.fondoImg{
+    background-image: url(./UserPanelBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 100vh;
+}
+
+.form-control {
+    width: 90%;
+    margin: 0 5%;
+    height: 2em;
+    padding-left: 10px;
+    border-radius: 8px;
+    background-color: white;
+    border: none;
 }

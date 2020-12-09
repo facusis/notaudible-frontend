@@ -1,5 +1,6 @@
 const HOME = "/";
 const BIBLIOTECA = "/biblioteca";
+const INFOAUDIOLIBRO = "/biblioteca/infoAudioLibro";
 const LOGIN = '/login';
 const REGISTER = '/register';
 const PERFIL = '/perfil';
@@ -13,6 +14,7 @@ export {
     REGISTER,
     PERFIL,
     UPLOADBOOK,
-    FORGETPASS
+    FORGETPASS,
+    INFOAUDIOLIBRO
 } 
 
