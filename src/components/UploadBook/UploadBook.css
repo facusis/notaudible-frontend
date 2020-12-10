@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+.input-library{
+    width: 95%;
+    margin: 0 auto;
+    height: 2em;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+label{
+    text-align: left;
+    font-family: 'Space Grotesk',  sans-serif;
+}
+
+.form-library{
+    margin-top: 10vh;
+}
