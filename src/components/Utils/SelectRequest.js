@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {fetchResource} from "../../api";
+import './SelectRequest.css';
+
 
 const SelectRequest = ({setCategory, request}) => {
 
@@ -11,8 +13,10 @@ const SelectRequest = ({setCategory, request}) => {
 
     return (
         <select
+        className={"input-library"}
             onChange={event => setCategory(event.target.value)}
         >
+            <option disabled selected>Selecciona una categoria</option>
             {data && data.map((item) => (
                 <option key={item.name} value={item._id}>
                     {item.name}

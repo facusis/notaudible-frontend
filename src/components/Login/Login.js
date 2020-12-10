@@ -1,13 +1,14 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useContext } from 'react';
 import { useHistory } from "react-router-dom";
 import {fetchResource} from "../../api";
 import './Login.css';
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LogedContext from '../../LogedContext';
 
 const Login = () => {
 
   let history = useHistory();
+  const loged = useContext(LogedContext);
 
   function handleClickR() {
     history.push("/register");
@@ -43,23 +44,26 @@ const Login = () => {
 			email: datos.email, 
 			password: datos.password
 		}).then((result) => {
-      localStorage.setItem("token", result.token);
-      localStorage.setItem("id", result.id);
-      if (!localStorage.getItem("token")) {
+      if (!result.token) {
         window.alert("No se ha guardado token");
       } else {
-        console.log(result);
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("id", result.id);
+        loged.setLoged(true);
+        history.push("/biblotecas");
       }
     });
   }
+
   return (
     <Fragment>
-    <div className="body-1">
-      <form onSubmit={sendForm}>
-      <div className="login-reg-panel">
-      <div className="logo-l"></div>			
+      <div className="body-1">
+        <div className="container-fluid">
+          <div className="login-reg-panel">
+            <div className="logo-l">
+            </div>			
               <div className="register-info-box">
-                <h2 className="nocuenta">¿No tienes cuenta?</h2>
+                <h5 className="nocuenta">¿No tienes cuenta?</h5>
                 <label id="label-login" for="log-login-show" onClick={handleClickR}>Registrarse</label>
               </div>
               <div className="white-panel">
@@ -72,10 +76,8 @@ const Login = () => {
                   <a className="olvidado" onClick={handleClickO}>¿Te has olvidado la contraseña?</a>
                 </div> 
               </div>
-
-
-            </div>
-      </form>
+          </div>
+        </div>
       </div>
     </Fragment>
   )

@@ -1,107 +1,115 @@
-/* 
-
-import React, { useRef, useState } from 'react';
+import React, { useState, useRef } from "react";
+import SelectRequest from '../Utils/SelectRequest';
+import './UploadBook.css';
 
 const UploadBook = () => {
-    const [titleEl, setTitleEl] = useState('');
-    const fileInputEl = useRef(null);
 
-    const onBookSelected = (files) => {
-      const url = `http://localhost:3001/upload`;
-      const title = titleEl;
-      if (files) {
-        const formData = new FormData();
+  const [data, setData] = useState({});
+  const [category, setCategory] = useState();
+  const fileInputEl = useRef(null);
 
-        formData.append('book', files[0]);
-        formData.append('name', title);
+  const handleInputChange = (event) => {
+    setData({
+      ...data,
+      [event.target.name] : event.target.value
+    })
+  }
 
-        const options = {
-          method: 'POST',
-          body: formData,
-          headers: new Headers({}),
-          mode: 'cors',
-        };
+  const handleSubmit = (files) => {
+    const url = `http://localhost:3001/track`;
 
-        fetch(url, options)
-          .then((response) => {
-            if (response.status === 200) {
-              return response.json();
-            }
-            return Promise.reject(response.status);
-          })
-          .then((payload) => {
-            console.log(`Saved book with id: ${payload}`);
-          })
-          .catch((error) => console.log(error));
-      }
-    };
+    if (files) {
+      const formData = new FormData();
 
-    return (
-      <div>
-        <div className="form_line">
-          <p path="title">Title:</p>
-          <input
-            type="text"
-            onChange={(e) => setTitleEl(e.target.value)}
-            className="form-control"
-            placeholder="Title"
-          />
-        </div>
-        <label className="upload_button" htmlFor="fileUpload">
-          Upload
-        <input
-            type="file"
-            id="fileUpload"
-            accept=".mp3,audio/*"
-            ref={fileInputEl}
-            onChange={() => onBookSelected(fileInputEl.current.files)}
-          />
-        </label>
-      </div>
-    );
-  };
-*/ 
+      formData.append('track', files[0]);
+      formData.append('name', data.title);
+      formData.append('title', data.title);
+      formData.append('category', category);
+      formData.append('author', data.author);
 
-  import React, { useState } from "react";
-  import SelectRequest from '../Utils/SelectRequest';
-  import {fetchResource} from "../../api";
-  import './UploadBook.css';
-  
-  const UploadBook = () => {
-    
-    const [data, setData] = useState({});
-    const [category, setCategory] = useState()
-  
-    const handleInputChange = (event) => {
-      setData({
-        ...data,
-        [event.target.name] : event.target.value
-      })
+      const options = {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Authorization: `bearer ${localStorage.getItem('token')}`
+        },
+        mode: 'cors',
+      };
+
+      fetch(url, options)
+        .then((response) => {
+          if (response.status === 200) {
+            return response.json();
+          }
+          return Promise.reject(response.status);
+        })
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => console.log(error));
     }
-  
-      const handleSubmit = (event) => {
-          event.preventDefault();
-  
-          fetchResource('upload','','POST', {
-              title: data.title, 
-              author: data.author, 
-              category: category
-          }).then((result) => {console.log(result)});
-      }
-  
-      return (
-        <div>
-            <input className={'input-library'} type="text" name="title" placeholder="Titulo del libro" required onChange={handleInputChange}/> <br/>
-            <label>Categoria</label><br/>
+  }
 
-            {/* how does this syntax work? */}
-            <SelectRequest setCategory={setCategory} request="category" /><br/>
-            <label>Autor</label><br/>
-            <input className={'input-library'} type="text" name="author" placeholder="Autor del libro" required onChange={handleInputChange}/><br/>
-            <button onClick={handleSubmit}>Crear libro</button>
-        </div>
-      )
-    }
-  
+  return (
+      
+    <div className={"uploadForm"}>
+      <label className={"labelUpload tituloUpload"}>
+        SUBE UN LIBRO
+      </label><br/>
+      <label className={"labelUpload"}>
+        Titulo
+      </label><br/>
+      <input 
+        className={'input-library'} 
+        type="text" 
+        name="title"
+        required 
+        onChange={handleInputChange}
+      /><br/>
+      <label className={"labelUpload"}>
+        Categoria
+      </label><br/>
+      <SelectRequest 
+        setCategory={setCategory} 
+        request="category">
+      </SelectRequest><br/>
+      <label className={"labelUpload"}>
+        Autor
+      </label><br/>
+      <input 
+        className={'input-library'} 
+        type="text" 
+        name="author" 
+        required 
+        onChange={handleInputChange}
+      /><br/>
+      <label className={"labelUpload"}>
+        Sinopsis
+      </label><br/>
+      <textarea 
+        className={'sinopsis'} 
+        type="text" 
+        name="sinopsis" 
+        required
+      /><br/>
+      <label className={"labelUpload"}>
+        Archivo
+      </label><br/>
+      <input 
+        className={'input-library'} 
+        type="file"
+        id="fileupload"
+        accept=".mp3,audio/*"
+        ref={fileInputEl}
+        required
+        /><br/>
+      <button 
+        className={"submitButton"}
+        onClick={ () => handleSubmit(fileInputEl.current.files) }>
+        Crear libro
+      </button>
+    </div>
+  )
+}
 
-  export default UploadBook;
+export default UploadBook;
