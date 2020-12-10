@@ -9,7 +9,7 @@ const InfoAudioLibro = () => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        fetchResource('data/book', '5fc547952818650da53038e5', 'GET')
+        fetchResource('user/getbook', '5fd25a2accb557125321120e', 'GET')
             .then(result => { setData(result) });
     }, [])
 
@@ -23,15 +23,15 @@ const InfoAudioLibro = () => {
                 <div className="bookBoxText">
                     <div className="TitleBox">{data && data.title}</div>
                     <div className="AuthorBox">Autor/a: {data && data.author}</div>
-                    <div className="CategoryBox">Categoria: {data && data.category}</div>
-                    <div className="CreatedByBox">Creado por: {data && data.user}</div>
+                    <div className="CategoryBox">Categoria: {data && data.category.name}</div>
+                    <div className="CreatedByBox">Creado por: {data && data.user.nickname}</div>
                     <div className="DescriptionBox">Descripción: A Clarice Starling, joven y ambiciosa estudiante de la academia del FBI, le encomiendan que entreviste a Hannibal Lecter, brillante psiquiatra y despiadado asesino, para conseguir su colaboración en la resolución de un caso de asesinatos en serie. El asombroso conocimiento de Lecter del comportamiento humano y su poderosa personalidad cautivarán de inmediato a Clarice, quien, incapaz de dominarse, establecerá con el una ambigua, inquietante y peligrosa relación.
 
 El silencio de los corderos fue llevada al cine en 1991, y ganó los Premios Oscar a las categorías mejor película, mejor dirección (Jonathan Demme), mejor actriz (Jodie Foster), mejor actor (Anthony Hopkins) y mejor guion adaptado.</div>
                 </div>
                 <CommentsViewer tituloComment={data} />
                 <div className="AddCommentBox">
-                    <AddComment userId="5fc13ad510b3225ac01e2f26" />
+                    <AddComment/>
                 </div>
             </div>
         </div>
