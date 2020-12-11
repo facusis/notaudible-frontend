@@ -26,6 +26,7 @@ const UploadBook = () => {
       formData.append('title', data.title);
       formData.append('category', category);
       formData.append('author', data.author);
+      formData.append('sinopsis', data.sinopsis);
 
       const options = {
         method: 'POST',
@@ -91,6 +92,7 @@ const UploadBook = () => {
         type="text" 
         name="sinopsis" 
         required
+        onChange={handleImputChange}
       /><br/>
       <label className={"labelUpload"}>
         Archivo

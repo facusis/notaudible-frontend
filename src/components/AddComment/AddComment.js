@@ -3,24 +3,24 @@ import './AddComment.css'
 
 export const AddComment = (props) => {
 
-    const [comment, setComment] = useState('')
+    const [commentInput, setCommentInput] = useState('')
 
 
     const handleChange = (e) => {
-        setComment(e.target.value)
+        setCommentInput(e.target.value)
       }
-      console.log(comment);
+      console.log(commentInput);
 
     const handleSubmit = () => {
 
-        const url = `http://localhost:3001/comments`;
+        const url = `http://localhost:3001/data/comments`;
 
         const options = {
             method: 'POST',
             body: JSON.stringify({
-                comment ,
-                id: localStorage.getItem('id'),
-                time: new Date(),
+                comment: commentInput,
+                UserId:localStorage.getItem('id'),
+                bookId:localStorage.getItem('book'),
             }),
             headers: {
               Authorization: `bearer ${localStorage.getItem('token')}`
@@ -57,7 +57,7 @@ export const AddComment = (props) => {
                     rows="10"
                     id="textarea"
                     onChange={handleChange}>
-                    {comment}
+                    {commentInput}
                 </textarea>
                 <br/>
                     <input type="submit" onClick={handleSubmit}/>
