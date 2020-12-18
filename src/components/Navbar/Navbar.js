@@ -2,16 +2,11 @@ import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import {isLogin, logOut} from '../../utils/loginUtils';
-import LogedContext from '../../LogedContext';
+import { LogedContext } from '../../LogedContext';
 
 const Navbar = () => {
 
-    const loged = useContext(LogedContext);
-
-    useEffect(() => {
-        console.log(loged.loged);
-    }, [loged.loged]);
-
+    const loged = useContext(LogedContext)
     const trueLogOut = () =>{
         logOut()
         loged.setLoged(false);

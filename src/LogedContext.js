@@ -1,5 +1,14 @@
-import {createContext} from 'react';
+import {createContext, useState} from 'react';
 
-const LogedContext = createContext();
+export const LogedContext = createContext();
 
-export default LogedContext;
+export const LogedContextProvider = ({children}) => {
+
+    const [loged, setLoged] = useState();
+
+    return(
+        <LogedContext.Provider value={{loged, setLoged}}>
+            {children}
+        </LogedContext.Provider>
+    )
+}

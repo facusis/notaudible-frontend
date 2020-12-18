@@ -3,12 +3,13 @@ import { useHistory } from "react-router-dom";
 import {fetchResource} from "../../api";
 import './Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LogedContext from '../../LogedContext';
+import { LogedContext } from '../../LogedContext';
 
 const Login = () => {
 
-  let history = useHistory();
   const loged = useContext(LogedContext);
+
+  let history = useHistory();
 
   function handleClickR() {
     history.push("/register");
@@ -49,8 +50,8 @@ const Login = () => {
       } else {
         localStorage.setItem("token", result.token);
         localStorage.setItem("id", result.id);
-        loged.setLoged(true);
         history.push("/biblotecas");
+        loged.setLoged(true);
       }
     });
   }
