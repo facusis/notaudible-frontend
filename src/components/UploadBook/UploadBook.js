@@ -26,7 +26,7 @@ const UploadBook = () => {
       formData.append('title', data.title);
       formData.append('category', category);
       formData.append('author', data.author);
-      formData.append('sinopsis', data.sinopsis);
+      
 
       const options = {
         method: 'POST',

@@ -42,7 +42,9 @@ function App() {
       </BrowserRouter>
       <div className="content-wrap">  
       </div>
+      <div className="footer">
       <Footer />
+      </div>
     </div>
   );
 }
