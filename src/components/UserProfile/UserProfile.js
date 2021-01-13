@@ -7,7 +7,7 @@ const UserProfile = () => {
     const {state, dispatch} = useContext(UserContext);
     const {userId} = useParams();
     const [showFollow, setShowFollow] = useState(state ? ! state.following.includes(userId): true);
-
+    
     useEffect(() => {
         fetch(`/user/${userId}`, {
             headers: {
@@ -19,15 +19,18 @@ const UserProfile = () => {
         })
     }, [])
 
+
+
     const followUser = () => {
-        fetch('/follow', {
-            method: "PUT",
+        fetch('http://localhost:3001/follow', {
+            method: "POST",
             headers: {
                 "ContentType": "application/json",
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
             },
             body: JSON.stringify({
-                followId: userId
+                followed: userId,
+                follower: localStorage.getItem('id'),
             })
         }).then(res => res.json())
         .then(data => {
@@ -50,7 +53,7 @@ const UserProfile = () => {
     };
 
     const unfollowUser = () => {
-        fetch('/unfollow', {
+        fetch('/http://localhost:3001/unfollow', {
             method: "PUT",
             headers: {
                 "ContentType": "application/json",
