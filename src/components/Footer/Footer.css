@@ -1,7 +1,7 @@
 
 .main-footer{
     background-color: #333c4e;
-    padding-top: 7em;
+    padding-top: 6em;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -16,7 +16,7 @@
 
 }
 
-.col{
+.cole{
     text-align: left;
     margin-left: 20px;
     font-family: 'Space Grotesk',  sans-serif;
@@ -55,14 +55,13 @@
 
 }
 
-.row{
+.rowe{
     padding-top: 30px;
     padding-bottom: 40px;
     font-family: 'Space Grotesk',  sans-serif;
     font-size: 15px;
     background-color: #474f5f;
     color: white
-
     
 }
 
@@ -90,3 +89,4 @@
     font-family: 'Space Grotesk',  sans-serif;
 
 }
+
