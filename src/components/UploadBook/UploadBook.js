@@ -8,7 +8,7 @@ const UploadBook = () => {
   const [category, setCategory] = useState();
   const fileInputEl = useRef(null);
 
-  const handleImputChange = (event) => {
+  const handleInputChange = (event) => {
     setData({
       ...data,
       [event.target.name] : event.target.value
@@ -64,7 +64,7 @@ const UploadBook = () => {
         type="text" 
         name="title"
         required 
-        onChange={handleImputChange}
+        onChange={handleInputChange}
       /><br/>
       <label className={"labelUpload"}>
         Categoria
@@ -81,7 +81,7 @@ const UploadBook = () => {
         type="text" 
         name="author" 
         required 
-        onChange={handleImputChange}
+        onChange={handleInputChange}
       /><br/>
       <label className={"labelUpload"}>
         Sinopsis
