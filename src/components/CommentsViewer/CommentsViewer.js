@@ -13,7 +13,7 @@ export const CommentsViewer = (props) => {
             fetchResource('data/comments', props.BookId, 'GET')
             .then(result => { 
                 setCommentContent(result);
-                props.setRefresh(false);
+                props.setRefresh(true);
              });
         }
 
