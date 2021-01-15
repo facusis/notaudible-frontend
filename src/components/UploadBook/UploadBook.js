@@ -92,7 +92,7 @@ const UploadBook = () => {
         type="text" 
         name="sinopsis" 
         required
-        onChange={handleImputChange}
+        onChange={handleInputChange}
       /><br/>
       <label className={"labelUpload"}>
         Archivo
