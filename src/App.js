@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import Register from './components/Register/Register';
@@ -10,14 +10,20 @@ import Home from './components/Home/Home';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Forgetpass from './components/Login/ForgetPass';
 import PageUploadBook from './components/UploadBook/PageUploadBook';
+import UserProfile from './components/UserProfile/UserProfile';
 import Footer from './components/Footer/Footer';
 import LogedContext from './LogedContext';
 import {BrowserRouter,
 Switch,
 Route
 } from 'react-router-dom';
-import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK, FORGETPASS, INFOAUDIOLIBRO} from './routes';
+import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK, FORGETPASS, INFOAUDIOLIBRO, USERPROFILE} from './routes';
 import { isLogin } from './utils/loginUtils';
+import {FontAwesomeIcon} from '@fortawesome/fontawesome-free';
+import Favorite from './components/Favorites/Favorite';
+
+export const UserContext = createContext();
+
 
 function App() {
 
@@ -37,6 +43,7 @@ function App() {
             <PrivateRoute path={UPLOADBOOK} component={PageUploadBook} />
             <PrivateRoute path={INFOAUDIOLIBRO} exact component={InfoAudioLibro} />
             <Route path={FORGETPASS} exact component={Forgetpass} />
+            <Route path={USERPROFILE} exact component={UserProfile} />
           </Switch>
         </LogedContext.Provider>
       </BrowserRouter>

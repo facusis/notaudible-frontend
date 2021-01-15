@@ -4,6 +4,7 @@ import { fetchResource } from "../../api";
 import { AddComment } from '../AddComment/AddComment';
 import { CommentsViewer } from '../CommentsViewer/CommentsViewer';
 import TrackPlayer from '../TrackPlayer/TrackPlayer';
+import Favorite from '../Favorites/Favorite';
 
 const InfoAudioLibro = () => {
     const BookId = '5fd25a2accb557125321120e';
@@ -24,6 +25,7 @@ const InfoAudioLibro = () => {
                 <div className="bookBoxImage">
                     <div className="BookTitle">Carátula</div>
                     <img className="BookImage" src="https://static-1.ivoox.com/audios/7/6/5/7/2311470387567_XXL.jpg"></img>
+                <Favorite />
                 </div>
                 <div className="bookBoxText">
                     <div className="TitleBox">{data && data.title}</div>
@@ -48,6 +50,7 @@ El silencio de los corderos fue llevada al cine en 1991, y ganó los Premios Osc
                     
                 </div>
             </div>
+            
         </div>
     )
 };
