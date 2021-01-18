@@ -13,15 +13,14 @@ export const CommentsViewer = (props) => {
             fetchResource('data/comments', props.BookId, 'GET')
             .then(result => { 
                 setCommentContent(result);
-                props.setRefresh(true);
+                props.setRefresh(false);
              });
         }
 
-    }, [props.refresh])
+    }, [])
+
+
     //Fetch all user details after receiving userId from commentContent.
-    
-
-
     return (
         <div className="BoxComments">
             <br/>

@@ -44,11 +44,11 @@ function App() {
             <PrivateRoute path={INFOAUDIOLIBRO} exact component={InfoAudioLibro} />
             <Route path={FORGETPASS} exact component={Forgetpass} />
             <Route path={USERPROFILE} exact component={UserProfile} />
+            <Route path={PUBLICPROFILE} exact component={UserProfile} />
           </Switch>
         </LogedContext.Provider>
       </BrowserRouter>
-      <div className="content-wrap">  
-      </div>
+
       <div className="footer">
       <Footer />
       </div>

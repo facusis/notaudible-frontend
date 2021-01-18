@@ -1,23 +1,25 @@
 import React from 'react'
-
+import './CommentViewer.css';
 
 console.log('Se activa el editor');
 
 export const CommentEditor = (props) => {
+
+
     return (
-        <div>
-            <textarea>
+        <div className="editorbox">
+            <textarea className="editTextArea">
                {props.comment}
             </textarea>
-            <div>
+            <div className="editButtons">
                 <div>
-                    Botón Cancelar Edición
+                    <button onClick={props.cancellation}>Cancelar</button> 
                 </div> 
                 <div>
-                    Botón Eliminar
+                    <button>Actualizar</button>
                 </div> 
                 <div>
-                    Botón Actualizar
+                    <button>Eliminar</button>
                 </div> 
             </div>
         </div>

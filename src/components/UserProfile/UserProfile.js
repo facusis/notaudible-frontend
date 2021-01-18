@@ -6,7 +6,7 @@ const UserProfile = () => {
     const [userProfile, setProfile] = useState(null);
     const {state, dispatch} = useContext(UserContext);
     const {userId} = useParams();
-    const [showFollow, setShowFollow] = useState(state ? ! state.following.includes(userId): true);
+    const [showFollow, setShowFollow] = useState(false);
     
     useEffect(() => {
         fetch(`/user/${userId}`, {
@@ -18,6 +18,12 @@ const UserProfile = () => {
             setProfile(result);
         })
     }, [])
+
+    useEffect(() => {
+
+
+        // fetch contra ruta /follower preguntando por el id del usuario
+    }, [userId]);
 
 
 

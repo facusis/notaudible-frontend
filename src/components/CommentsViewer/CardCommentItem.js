@@ -11,7 +11,20 @@ export const CardCommentItem = (props) => {
   const [isUpdate, setIsUpdate] = useState(false);
 
   const editMode = () => {
-    setIsUpdate(!isUpdate);
+    //CONDICIONAL introducir código aqui para validar que el usuario propio es el unico que puede editar su comentario//
+    if (props.userId === localStorage.id) {
+      setIsUpdate(true);
+      console.log('El modo de edición se ha activado');
+  }
+};
+
+  const cancelMode = () => {
+    setIsUpdate(false);
+    console.log('El modo de edición se ha desactivado');
+  };
+
+  const deleteComment = () => {
+
   }
 
   useEffect(() => {    
@@ -29,8 +42,8 @@ export const CardCommentItem = (props) => {
     return (
       <ul style={{ listStyleType: "none" }}>
         <div className="UserComentario">{userInfo && userInfo.nickname} opinó {fecha}:</div>
-        <div className="UserOpinion" onClick={editMode}>
-          {isUpdate ? (<CommentEditor comment={props.comm.comment}/>) : props.comm.comment}
+        <div className="UserOpinion">
+          {isUpdate ? (<CommentEditor comment={props.comm.comment} cancellation={cancelMode}/>) : <div onClick={editMode}>{props.comm.comment}</div>}
         </div>
       </ul>
     );  
