@@ -1,20 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
-.Fondo {
-    background-image: url(BookOverviewBG.jpeg);
-    background-repeat: no-repeat;
+
+
+.fondoImgIAL { 
+    background: url(BookOverviewBG.jpeg) 
+    no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: 50% 50%;
-    z-index: -200;
-    height: 100%;
-}
+    height: auto;
+    width: auto;
+    z-index:0;
+  }
+
+  .boxPagina{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    z-index:2;
+    top: 1;
+  }
 
 .boxInfo {
 
     display: flex;
     flex: 1 0 1;
-    height: 100vh;
+    /*height: 100vh;*/
     flex-wrap: wrap; 
     flex-direction: row;
     padding: 5px;

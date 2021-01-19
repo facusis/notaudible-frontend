@@ -12,12 +12,13 @@ export const CommentsViewer = (props) => {
         if (props.refresh) {
             fetchResource('data/comments', props.BookId, 'GET')
             .then(result => { 
+                result.reverse();
                 setCommentContent(result);
                 props.setRefresh(false);
              });
         }
 
-    }, [])
+    }, [props.refresh])
 
 
     //Fetch all user details after receiving userId from commentContent.
@@ -32,6 +33,7 @@ export const CommentsViewer = (props) => {
                         comm={comm}
                         key={comm.id}
                         userId={comm.userId}
+                        setRefresh={props.setRefresh}
                         //user={users.filter(u => u.id === comm.userId)[0]}
                             />;
             })}

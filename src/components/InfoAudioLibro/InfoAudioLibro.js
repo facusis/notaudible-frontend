@@ -7,20 +7,28 @@ import TrackPlayer from '../TrackPlayer/TrackPlayer';
 import Favorite from '../Favorites/Favorite';
 
 const InfoAudioLibro = () => {
+
+
     const BookId = '5fd25a2accb557125321120e';
+
+
     const [data, setData] = useState();
     const [refresh, setRefresh] = useState(true);
+
+
+
     useEffect(() => {    
  
         fetchResource('user/getbook', BookId, 'GET')
             .then(result => { setData(result) });
     }, [])
 
-    console.log(data && data.title);
+    //console.log(data && data.title);
     const title = data ?  data.title : '';
 
     return (
-        <div className="Fondo">
+    <div className="boxPagina">
+        <div>
             <div className="boxInfo">
                 <div className="bookBoxImage">
                     <div className="BookTitle">Carátula</div>
@@ -46,11 +54,13 @@ El silencio de los corderos fue llevada al cine en 1991, y ganó los Premios Osc
                 <div className="AddCommentBox">
                     <AddComment
                         bookId={BookId}
-                        setRefresh={setRefresh}/>
+                        setRefresh={setRefresh}
+                        refresh={refresh}/>
                     
                 </div>
             </div>
             
+        </div>
         </div>
     )
 };

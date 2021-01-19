@@ -18,8 +18,8 @@ export const AddComment = (props) => {
         comment: commentInput,
         bookId: props.bookId,
       }).then((result) => {
-        props.setRefresh(true);
-        setCommentInput('');
+          setCommentInput('');
+          props.setRefresh(true);
       });
     }
     
