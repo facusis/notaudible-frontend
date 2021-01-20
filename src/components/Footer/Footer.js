@@ -17,7 +17,6 @@ const footer = () => {
                                 <li>08011 Barcelona.</li>
                             </ul>
                     </div>
-                    
                     <div className="col1">
                         <h2> SOCIAL NETWORKS </h2>
                             <div className="list-unstyled1">

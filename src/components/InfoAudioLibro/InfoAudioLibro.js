@@ -4,13 +4,15 @@ import { fetchResource } from "../../api";
 import { AddComment } from '../AddComment/AddComment';
 import { CommentsViewer } from '../CommentsViewer/CommentsViewer';
 import Favorite from '../Favorites/Favorite';
+import { useParams } from 'react-router-dom';
 
 const InfoAudioLibro = () => {
 
     const [data, setData] = useState();
+    let {bookId} = useParams()
 
     useEffect(() => {
-        fetchResource('user/getbook', '5fd25a2accb557125321120e', 'GET')
+        fetchResource('user/getbook', bookId, 'GET')
             .then(result => { setData(result) });
     }, [])
 
@@ -29,7 +31,7 @@ const InfoAudioLibro = () => {
                     <div className="CreatedByBox">Creado por: {data && data.user.nickname}</div>
                     <div className="DescriptionBox">Descripción: A Clarice Starling, joven y ambiciosa estudiante de la academia del FBI, le encomiendan que entreviste a Hannibal Lecter, brillante psiquiatra y despiadado asesino, para conseguir su colaboración en la resolución de un caso de asesinatos en serie. El asombroso conocimiento de Lecter del comportamiento humano y su poderosa personalidad cautivarán de inmediato a Clarice, quien, incapaz de dominarse, establecerá con el una ambigua, inquietante y peligrosa relación.
 
-El silencio de los corderos fue llevada al cine en 1991, y ganó los Premios Oscar a las categorías mejor película, mejor dirección (Jonathan Demme), mejor actriz (Jodie Foster), mejor actor (Anthony Hopkins) y mejor guion adaptado.</div>
+                    El silencio de los corderos fue llevada al cine en 1991, y ganó los Premios Oscar a las categorías mejor película, mejor dirección (Jonathan Demme), mejor actriz (Jodie Foster), mejor actor (Anthony Hopkins) y mejor guion adaptado.</div>
                 </div>
                 <CommentsViewer tituloComment={data} />
                 <div className="AddCommentBox">
@@ -42,3 +44,4 @@ El silencio de los corderos fue llevada al cine en 1991, y ganó los Premios Osc
 };
 
 export default InfoAudioLibro;
+

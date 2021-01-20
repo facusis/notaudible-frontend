@@ -37,7 +37,7 @@ function App() {
             <Route path={BIBLIOTECA} exact component={Biblioteca} />
             <PrivateRoute path={PERFIL} component={UserPanel} />
             <PrivateRoute path={UPLOADBOOK} component={PageUploadBook} />
-            <PrivateRoute path={INFOAUDIOLIBRO} exact component={InfoAudioLibro} />
+            <PrivateRoute path={"/libro/:bookId"} exact component={InfoAudioLibro} />
             <Route path={FORGETPASS} exact component={Forgetpass} />
           </Switch>
         </LogedContext.Provider>
