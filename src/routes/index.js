@@ -1,6 +1,6 @@
 const HOME = "/";
 const BIBLIOTECA = "/biblioteca";
-const INFOAUDIOLIBRO = "/infoAudioLibro";
+const INFOAUDIOLIBRO = "/libro/:bookId;
 const LOGIN = '/login';
 const REGISTER = '/register';
 const PERFIL = '/perfil';

@@ -10,8 +10,6 @@ import { useParams } from 'react-router-dom';
 const InfoAudioLibro = () => {
 
 
-    const BookId = '5fd25a2accb557125321120e';
-
 
     const [data, setData] = useState();
     let {bookId} = useParams()
@@ -44,7 +42,7 @@ const InfoAudioLibro = () => {
                     El silencio de los corderos fue llevada al cine en 1991, y ganó los Premios Oscar a las categorías mejor película, mejor dirección (Jonathan Demme), mejor actriz (Jodie Foster), mejor actor (Anthony Hopkins) y mejor guion adaptado.</div>
                 </div>
                 <CommentsViewer
-                        bookId={BookId}
+                        bookId={bookId}
                         bookTitle={data && data.title}
                         refresh={refresh}
                         setRefresh={setRefresh}
@@ -52,7 +50,7 @@ const InfoAudioLibro = () => {
                     <TrackPlayer id="5fd25a2accb557125321120a"/>
                 <div className="AddCommentBox">
                     <AddComment
-                        bookId={BookId}
+                        bookId={bookId}
                         setRefresh={setRefresh}
                         refresh={refresh}/>
                     
