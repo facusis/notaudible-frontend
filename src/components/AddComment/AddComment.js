@@ -1,44 +1,26 @@
 import React, {useState} from 'react'
 import './AddComment.css'
+import {fetchResource} from "../../api";
 
 export const AddComment = (props) => {
 
-    const [comment, setComment] = useState('')
-
+    const [commentInput, setCommentInput] = useState('')
 
     const handleChange = (e) => {
-        setComment(e.target.value)
-      }
-      console.log(comment);
+      setCommentInput(e.target.value)
+    }
+
 
     const handleSubmit = () => {
 
-        const url = `http://localhost:3001/comments`;
-
-        const options = {
-            method: 'POST',
-            body: JSON.stringify({
-                comment ,
-                id: localStorage.getItem('id'),
-                time: new Date(),
-            }),
-            headers: {
-              Authorization: `bearer ${localStorage.getItem('token')}`
-            },
-            mode: 'cors',
-          };
-
-        fetch(url, options)
-        .then((response) => {
-          if (response.status === 200) {
-            return response.json();
-          }
-          return Promise.reject(response.status);
-        })
-        .then((result) => {
-          console.log(result);
-        })
-        .catch((error) => console.log(error));
+      fetchResource('data/comments','','POST', {
+        userId: localStorage.getItem('id'),
+        comment: commentInput,
+        bookId: props.bookId,
+      }).then((result) => {
+          setCommentInput('');
+          props.setRefresh(true);
+      });
     }
     
 
@@ -48,7 +30,6 @@ export const AddComment = (props) => {
             <br/>
             <h4>¡Su opinión también cuenta!</h4>
             <br/>
-                <form>
                 <textarea
                     className="textArea"
                     name="mensaje"
@@ -56,13 +37,11 @@ export const AddComment = (props) => {
                     cols="50"
                     rows="10"
                     id="textarea"
+                    value={commentInput}
                     onChange={handleChange}>
-                    {comment}
                 </textarea>
                 <br/>
-                    <input type="submit" onClick={handleSubmit}/>
-                </form>
-
+                <button onClick={handleSubmit}>Enviar</button>
             <br/>
             <br/>
         </div>

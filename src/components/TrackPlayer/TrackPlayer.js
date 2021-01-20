@@ -3,6 +3,8 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
 const TrackPlayer = ({id}) => {
+    console.log("existo");
+    console.log(id);
 
     return(
         <AudioPlayer src={`http://localhost:3001/track/${id}`} />
