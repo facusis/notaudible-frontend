@@ -11,13 +11,12 @@ export const CommentsViewer = (props) => {
     useEffect(() => {    
         if (props.refresh) {
             fetchResource('data/comments', props.BookId, 'GET')
-            .then(result => { 
+            .then(result => { if(result >0) {
                 result.reverse();
                 setCommentContent(result);
                 props.setRefresh(false);
-             });
-        }
-
+            }});
+        } else {console.log('gorka mascachota')}
     }, [props.refresh])
 
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Favorite.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBook} from '@fortawesome/free-solid-svg-icons';

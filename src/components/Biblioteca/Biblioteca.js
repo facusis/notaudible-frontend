@@ -41,8 +41,8 @@ const Biblioteca = ({setCategory, request}) => {
                             <div class="row">
                                 <div className="col-sm">
                                     <img src="https://definicion.de/wp-content/uploads/2009/03/libro.jpg" className="foto"></img>
-                                    <option key={results.title} value={item._id==results.category}>
-                                        <a href="">{results.title}</a>
+                                    <option key={results.title} value={item._id===results.category}>
+                                        <a href=" ">{results.title}</a>
                                     </option>
                                 </div>
                             </div>
