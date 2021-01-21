@@ -24,6 +24,17 @@
     
 }
 
+.input-urlimage { 
+    width: 90%;
+    margin: 0 5%;
+    height: 2em;
+    padding-left: 10px;
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+    
+}
+
 .sinopsis {
     width: 90%;
     margin: 0 5%;
