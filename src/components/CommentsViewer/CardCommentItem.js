@@ -20,8 +20,6 @@ export const CardCommentItem = (props) => {
      });
     }, [])
 
-
-
   const editMode = () => {
     if (props.userId === localStorage.id) {
       setIsUpdate(true);
@@ -37,8 +35,9 @@ export const CardCommentItem = (props) => {
   const handleDelete = () => {
     console.log(props.comm._id);
     fetchResource('data/comments',props.comm._id,'DELETE', {})
-      props.setRefresh(true);
-      console.log('se ha pulsado el botón eliminar');  
+    setIsUpdate(false);
+    props.setRefresh(true);
+    console.log('se ha pulsado el botón eliminar');  
   };
 
   const fecha = formatRelative(new Date(props.comm.createdAt), new Date(), { locale: es });
@@ -46,7 +45,7 @@ export const CardCommentItem = (props) => {
   //console.log(fecha);
 
     return (
-      <ul style={{ listStyleType: "none" }}>
+      <ul style={{ listStyleType: "none"}}>
         <div className="UserComentario">{userInfo && userInfo.nickname} opinó {fecha}:</div>
         <div className="UserOpinion">
           {isUpdate ? (<CommentEditor setIsUpdate={setIsUpdate} setRefresh={props.setRefresh} comment={props.comm.comment} commId={props.comm._id} cancellation={cancelMode} handleDelete={handleDelete}/>) : <div onClick={editMode}>{props.comm.comment}</div>}

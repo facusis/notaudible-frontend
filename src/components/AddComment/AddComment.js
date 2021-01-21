@@ -8,11 +8,16 @@ export const AddComment = (props) => {
 
     const handleChange = (e) => {
       setCommentInput(e.target.value)
-    }
+    };
 
+    const handleKeyPress = (event) => {
+      if(event.key === 'Enter'){
+        console.log(event.key);
+        handleSubmit();
+      };}
+  
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (event) => {      
       fetchResource('data/comments','','POST', {
         userId: localStorage.getItem('id'),
         comment: commentInput,
@@ -38,12 +43,14 @@ export const AddComment = (props) => {
                     rows="10"
                     id="textarea"
                     value={commentInput}
-                    onChange={handleChange}>
+                    onChange={handleChange}
+                    onKeyPress={handleKeyPress}>
                 </textarea>
                 <br/>
-                <button onClick={handleSubmit}>Enviar</button>
+                <button onClick={handleSubmit}  >Enviar</button>
             <br/>
             <br/>
         </div>
     )
-}
+};
+

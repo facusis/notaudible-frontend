@@ -9,7 +9,7 @@ import Favorite from '../Favorites/Favorite';
 const InfoAudioLibro = () => {
 
 
-    const BookId = '5fd25a2accb557125321120e';
+    const bookId = '5fd25a2accb557125321120e';
 
 
     const [data, setData] = useState();
@@ -19,12 +19,11 @@ const InfoAudioLibro = () => {
 
     useEffect(() => {    
  
-        fetchResource('user/getbook', BookId, 'GET')
+        fetchResource('user/getbook', bookId, 'GET')
             .then(result => { setData(result) });
     }, [])
 
-    //console.log(data && data.title);
-    const title = data ?  data.title : '';
+
 
     return (
     <div className="boxPagina">
@@ -45,15 +44,17 @@ const InfoAudioLibro = () => {
 El silencio de los corderos fue llevada al cine en 1991, y ganó los Premios Oscar a las categorías mejor película, mejor dirección (Jonathan Demme), mejor actriz (Jodie Foster), mejor actor (Anthony Hopkins) y mejor guion adaptado.</div>
                 </div>
                 <CommentsViewer
-                        bookId={BookId}
+                        bookId={bookId}
                         bookTitle={data && data.title}
                         refresh={refresh}
-                        setRefresh={setRefresh}
-                    />
-                    <TrackPlayer id="5fd25a2accb557125321120a"/>
+                        setRefresh={setRefresh}/>
+                    <TrackPlayer
+                        author={data && data.author}
+                        title={data && data.title}
+                        fileId={data && data.file}/>
                 <div className="AddCommentBox">
                     <AddComment
-                        bookId={BookId}
+                        bookId={bookId}
                         setRefresh={setRefresh}
                         refresh={refresh}/>
                     
