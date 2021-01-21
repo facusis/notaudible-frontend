@@ -16,7 +16,7 @@ export const CommentsViewer = (props) => {
                 setCommentContent(result);
                 props.setRefresh(false);
             }});
-        } else {console.log('gorka mascachota')}
+        } else {console.log('hay un error')}
     }, [props.refresh])
 
 
