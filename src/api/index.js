@@ -1,3 +1,6 @@
+const API_URL = window.location.hostname === 'notaudible.netlify.app' ? "https://notaudible.herokuapp.com" : "http://localhost:3001"
+
+
 export const fetchResource = (resource, id, method, data, options={}, headers={}) => {
 
     const defaultOptions = {
@@ -11,7 +14,7 @@ export const fetchResource = (resource, id, method, data, options={}, headers={}
         Authorization: `bearer ${localStorage.getItem('token')}`
     }
 
-    let url = `http://localhost:3001/${resource}`;
+    let url = `${API_URL}/${resource}`;
 
     if (id) {
         url += `/${id}`;
