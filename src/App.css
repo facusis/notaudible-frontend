@@ -17,3 +17,10 @@
   width: 30%;
   height: 100px;
 }
+
+.footer {
+
+  left:0;
+  bottom:0;
+  right:0;
+}
