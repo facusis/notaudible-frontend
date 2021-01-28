@@ -12,15 +12,19 @@ export const CommentsViewer = (props) => {
    
     useEffect(() => {    
         if (props.setRefresh) {
-            fetchResource('data/comments', '', 'GET')
+            fetchResource(`data/comments?bookId=${props.bookId}`, '', 'GET')
             .then(result => {
+                console.log(result);
                 result.reverse();
 
-                //filtering fetched data
-                const filteredComments = result.filter(f =>
-                    (f.bookId === props.bookId));
+           
                 
-                setCommentContent(filteredComments);
+                //filtering fetched data
+                // const filteredComments = result.filter(f =>
+                //     (f.bookId === props.bookId));
+                
+                // setCommentContent(filteredComments);
+                setCommentContent(result);
                 props.setRefresh(false);                 
     ;} 
             )
