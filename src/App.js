@@ -20,7 +20,6 @@ Route
 import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK, FORGETPASS, INFOAUDIOLIBRO, USERPROFILE} from './routes';
 import { isLogin } from './utils/loginUtils';
 import {FontAwesomeIcon} from '@fortawesome/fontawesome-free';
-import Favorite from './components/Favorites/Favorite';
 
 export const UserContext = createContext();
 

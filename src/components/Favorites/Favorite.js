@@ -66,7 +66,7 @@ const deleteFavourite = (event) => {
 
 
     return ( 
-        <div>
+        <div classname="love">
             {favourite ? (<a classname="love"><img src={heartFull} onClick={deleteFavourite} alt="This book is among your favourite books list"/></a>) :
             (<a classname="love"><img  src={heartEmpty} className="love" alt="This book is not among your favourite books list" onClick={makeFavourite}/></a>)}
         </div>

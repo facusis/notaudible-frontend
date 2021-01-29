@@ -33,7 +33,7 @@ export const AddComment = (props) => {
         
         <div>
             <br/>
-            <h4>¡Su opinión también cuenta!</h4>
+            <h4 className="h4a">¡Su opinión también cuenta!</h4>
             <br/>
                 <textarea
                     className="textArea"

@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
-:root{
-    --bar-color: rgb(255, 0, 0);
-    --time-color: rgb(255, 0, 0);
-}
-
 .player {
     background-color: rgba(3, 3, 3, 0.637);
     backdrop-filter: blur(2px);

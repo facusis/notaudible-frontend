@@ -24,6 +24,7 @@ export const CommentsViewer = (props) => {
                 //     (f.bookId === props.bookId));
                 
                 // setCommentContent(filteredComments);
+
                 setCommentContent(result);
                 props.setRefresh(false);                 
     ;} 
@@ -47,7 +48,7 @@ export const CommentsViewer = (props) => {
                             userId={comm.userId}
                             setRefresh={props.setRefresh}/>;
                     })}
-                    </li>            
+                    </li>
             </div>
                 <div className="Pagination">
                     <a>Page 1</a>

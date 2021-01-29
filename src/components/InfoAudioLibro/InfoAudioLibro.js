@@ -1,39 +1,40 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import './InfoAudioLibro.css';
 import { fetchResource } from "../../api";
 import { AddComment } from '../AddComment/AddComment';
 import { CommentsViewer } from '../CommentsViewer/CommentsViewer';
 import TrackPlayer from '../TrackPlayer/TrackPlayer';
 import Favorite from '../Favorites/Favorite';
+import noImage from './noImage.png';
 
 const InfoAudioLibro = () => {
 
-
-    const bookId = '6011775ab79f5f7777f5a8b1';
-
-
+    const {bookId} = useParams();
     const [data, setData] = useState();
     const [refresh, setRefresh] = useState(true);
-
-
+    const [isImage, setIsImage] = useState(false);
 
     useEffect(() => {    
  
         fetchResource('user/getbook', bookId, 'GET')
-            .then(result => { setData(result) });
-            
-    }, [])
-
-    console.log(data);
+            .then(result => {
+                setData(result); 
+                if (result && result.urlimage){
+                setIsImage(true);
+                setRefresh(false);
+            };
+        
+    });
+}, [])
 
     return (
     <div className="boxPagina">
         <div>
             <div className="boxInfo">
                 <div className="bookBoxImage">
-                    <div className="BookTitle"></div>
-                    
-                    <img className="BookImage" src={data && data.urlimage}></img>
+                   
+                    <img className="BookImage" src={ isImage ? data.urlimage : noImage }></img>
                     <div className="FavouriteIcon"><Favorite bookId={bookId}/></div>
                     
                 </div>
