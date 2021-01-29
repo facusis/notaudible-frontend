@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import heartEmpty from './heartEmpty.svg';
 import heartFull from './heartFull.svg';
 import {fetchResource} from "../../api";
+import './Favorite.css';
 
 
 const Favorite = (props) => {
@@ -66,9 +67,9 @@ const deleteFavourite = (event) => {
 
 
     return ( 
-        <div classname="love">
-            {favourite ? (<a classname="love"><img src={heartFull} onClick={deleteFavourite} alt="This book is among your favourite books list"/></a>) :
-            (<a classname="love"><img  src={heartEmpty} className="love" alt="This book is not among your favourite books list" onClick={makeFavourite}/></a>)}
+        <div className="love">
+            {favourite ? (<a className="love"><img src={heartFull} onClick={deleteFavourite} alt="This book is among your favourite books list"/></a>) :
+            (<a><img  src={heartEmpty} className="love" alt="This book is not among your favourite books list" onClick={makeFavourite}/></a>)}
         </div>
     );
 }
