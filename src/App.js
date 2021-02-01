@@ -6,6 +6,7 @@ import Register from './components/Register/Register';
 import Biblioteca from './components/Biblioteca/Biblioteca';
 import InfoAudioLibro from './components/InfoAudioLibro/InfoAudioLibro';
 import UserPanel from './components/UserPanel/UserPanel';
+import Discover from './components/Discover/Discover';
 import Home from './components/Home/Home';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Forgetpass from './components/Login/ForgetPass';
@@ -17,7 +18,7 @@ import {BrowserRouter,
 Switch,
 Route
 } from 'react-router-dom';
-import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK, FORGETPASS, INFOAUDIOLIBRO, USERPROFILE} from './routes';
+import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK, FORGETPASS, INFOAUDIOLIBRO, USERPROFILE, PUBLICPROFILE, DISCOVER} from './routes';
 import { isLogin } from './utils/loginUtils';
 export const UserContext = createContext();
 
@@ -39,7 +40,8 @@ function App() {
             <PrivateRoute path={UPLOADBOOK} component={PageUploadBook} />
             <PrivateRoute path={INFOAUDIOLIBRO} exact component={InfoAudioLibro} />
             <Route path={FORGETPASS} exact component={Forgetpass} />
-            <Route path={USERPROFILE} exact component={UserProfile} />
+            <Route path={PUBLICPROFILE} exact component={UserProfile} />
+            <Route path={DISCOVER} exact component={Discover} />
           </Switch>
         </LogedContext.Provider>
       </BrowserRouter>

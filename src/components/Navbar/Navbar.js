@@ -27,11 +27,13 @@ const Navbar = () => {
                         <Link to="/biblioteca/infoAudioLibro"> Ver Audiolibro </Link>
                         <Link to="/upload"> Subir Audiolibro </Link> 
                         <Link to="/perfil"> Perfil </Link> 
+                        <Link to="/discover"> Discover </Link>
                         <Link className="nav-cerrarsesion" to="/perfil" onClick={trueLogOut}> Cerrar Sesión </Link> 
                     </div> : 
                     <div className='nav-links'> 
                         <Link to="/" >Home</Link>
                         <Link to="/biblioteca" >Bibliotecas</Link>
+                        <Link to="/discover" >Discover</Link>
                         <Link to="/register"> Register </Link>
                         <Link className="nav-login" to="/login"> Login </Link>
                     </div>

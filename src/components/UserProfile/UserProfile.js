@@ -1,135 +1,133 @@
-import React, {useEffect, useState, useContext} from 'react';
-import {UserContext} from '../../App';
-import {useParams} from 'react-router-dom';
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../../App";
+import { useParams } from "react-router-dom";
+import {fetchResource} from '../../api';
 
 const UserProfile = () => {
-    const [userProfile, setProfile] = useState(null);
-    const {state, dispatch} = useContext(UserContext);
-    const {userId} = useParams();
-    const [showFollow, setShowFollow] = useState(state ? ! state.following.includes(userId): true);
-    
-    useEffect(() => {
-        fetch(`/user/${userId}`, {
-            headers: {
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
-            }
-        }).then(res => res.json())
-        .then(result => {
-            setProfile(result);
-        })
-    }, [])
+  const [profile, setProfile] = useState();
+  const { state, dispatch } = useContext(UserContext);
+  const { userId } = useParams();
+  const [showFollow, setShowFollow] = useState(false);
+  const [followers, setFollowers] = useState([]);
+  const [following, setFollowing] = useState([]);
 
+  // follow a user
+  // unfollow a user
+  // display the followers count on the user card
+  // display the following count on the user card
+  // pass info to the UserCard component
+  // then render it on the Discover page
 
+//   useEffect(() => {
+//     fetch("http://localhost:3001/user/follow-user", {
+//       headers: {
+//         Authorization: "Bearer " + localStorage.getItem("jwt"),
+//       },
+//     })
+//       .then((res) => res.json())
+//       .then((res) => {
+//         setFollowers(res);
+//       });
+//   }, []);
+//   // fetch contra ruta /follower preguntando por el id del usuario
+//   console.log(followers);
 
-    const followUser = () => {
-        fetch('http://localhost:3001/follow', {
-            method: "POST",
-            headers: {
-                "ContentType": "application/json",
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
-            },
-            body: JSON.stringify({
-                followed: userId,
-                follower: localStorage.getItem('id'),
-            })
-        }).then(res => res.json())
-        .then(data => {
-            dispatch({
-                type: "UPDATE",
-                payload: {following: data.following, followers: data.followers}
-            });
-            localStorage.setItem("user", JSON.stringify(data));
-            setProfile((prevState) => {
-                return {
-                    ...prevState,
-                    user: {
-                        ...prevState.user,
-                        followers: [...prevState.user.followers, data._id]
-                    }
-                }
-            })
-            setShowFollow(false);
-        })
-    };
+//   useEffect(() => {
+//     fetch("http://localhost:3001/user/unfollow-user", {
+//       headers: {
+//         Authorization: "Bearer " + localStorage.getItem("jwt"),
+//       },
+//     })
+//       .then((res) => res.json())
+//       .then((res) => {
+//         setFollowing(res);
+//       });
+//   }, []);
 
-    const unfollowUser = () => {
-        fetch('/http://localhost:3001/unfollow', {
-            method: "PUT",
-            headers: {
-                "ContentType": "application/json",
-                "Authorization": "Bearer " + localStorage.getItem("jwt")
-            },
-            body: JSON.stringify({
-                unfollowId: userId
-            })
-        }).then(res => res.json())
-        .then(data => {
-            dispatch({
-                type: "UPDATE",
-                payload: {following: data.following, followers: data.followers}
-            });
-            localStorage.setItem("user", JSON.stringify(data));
+  const followUser = () => {
+    fetchResource("user/follow-user", '', 'POST', {
+      following: userId,
+      follower: localStorage.getItem('id'),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setFollowers(res);
+      });
+  };
 
-            setProfile((prevState) => {
-                const newFollower = prevState.user.followers.filter(item => item != data._id);
-                return {
-                    ...prevState.user,
-                    followers: newFollower
-                }
-            })
-            setShowFollow(true);
-        })
-    }
-
-    return (
-        <>
-        {userProfile ?
-        <div style={{maxWidth:"550px",margin:"0px auto"}}>
-            <div style={{
-                display:"flex",
-                justifyContent:"space-around",
-                margin:"18px 0px",
-                borderBottom:"1px solid grey"
-            }}>
-                <div>
-                    <img style={{width:"160px",height:"160px",borderRadius:"80px"}}
-                    src={userProfile.user.pic}
-                    />
-                </div>
-                <div>
-                    <h4>{userProfile.user.name}</h4>
-                    <h5>{userProfile.user.email}</h5>
-                    <div style={{display:"flex",justifyContent:"space-between",width:"108%"}}>
-                        <h6>{userProfile.posts.length} posts</h6>
-                        <h6>{userProfile.user.followers.length} followers</h6>
-                        <h6>{userProfile.user.following.length} following</h6>
-                    </div>
-                    {showFollow?
-                    <button style={{
-                        margin:"10px"
-                    }} className="btn waves-effect waves-light #64b5f6 blue darken-1"
-                     onClick={()=>followUser()}
-                     >
-                         Follow
-                     </button>
-                     : 
-                     <button
-                     style={{
-                         margin:"10px"
-                     }}
-                     className="btn waves-effect waves-light #64b5f6 blue darken-1"
-                     onClick={()=>unfollowUser()}
-                     >
-                         UnFollow
-                     </button>
-                     }
-                    
-                   
+  const unfollowUser = () => {
+    fetchResource("user/unfollow-user", '', '', {
+        following: userId,
+        follower: localStorage.getItem('id'),
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          setFollowers(res);
+        });
  
-                </div>
+  };
+
+//   return (
+//     <>
+      {/* {userProfile ? (
+        <div style={{ maxWidth: "550px", margin: "0px auto" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              margin: "18px 0px",
+              borderBottom: "1px solid grey",
+            }}
+          >
+            <div>
+              <img
+                style={{
+                  width: "160px",
+                  height: "160px",
+                  borderRadius: "80px",
+                }}
+                src={userProfile.user.pic}
+              />
             </div>
-      
-            <div className="gallery">
+            <div>
+              <h4>{userProfile.user.name}</h4>
+              <h5>{userProfile.user.email}</h5>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  width: "108%",
+                }}
+              >
+                <h6>{userProfile.posts.length} books</h6>
+                <h6>{userProfile.user.followers.length} followers</h6>
+                <h6>{userProfile.user.following.length} following</h6>
+              </div>
+              {showFollow ? (
+                <button
+                  style={{
+                    margin: "10px",
+                  }}
+                  className="btn waves-effect waves-light #64b5f6 blue darken-1"
+                  onClick={() => followUser()}
+                >
+                  Follow
+                </button>
+              ) : (
+                <button
+                  style={{
+                    margin: "10px",
+                  }}
+                  className="btn waves-effect waves-light #64b5f6 blue darken-1"
+                  onClick={() => unfollowUser()}
+                >
+                  UnFollow
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* <div className="gallery">
                 {
                     userProfile.posts.map(item=>{
                         return(
@@ -139,14 +137,13 @@ const UserProfile = () => {
                 }
  
             
-            </div>
-        </div>
-        
-        
-        : <h2>loading...!</h2>}
-        
-        </>
-    )
+            // </div> */}
+    //     </div>
+    // //   ) : (
+    //     <h2>loading...!</h2>
+//       )} */}
+//     </>
+//   );
 };
 
 export default UserProfile;

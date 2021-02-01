@@ -6,7 +6,9 @@ const REGISTER = '/register';
 const PERFIL = '/perfil';
 const UPLOADBOOK = '/upload';
 const FORGETPASS = '/login/forgetPass';
-const USERPROFILE = '/perfil/:userId';
+const USERPROFILE = '/perfil'
+const DISCOVER = '/discover'
+const PUBLICPROFILE = '/publicprofile/:userId'
 
 export {
     HOME,
@@ -17,6 +19,8 @@ export {
     UPLOADBOOK,
     FORGETPASS,
     INFOAUDIOLIBRO,
-    USERPROFILE
+    USERPROFILE,
+    PUBLICPROFILE,
+    DISCOVER
 } 
 
