@@ -7,7 +7,9 @@ const UploadBook = () => {
   const [data, setData] = useState({});
   const [category, setCategory] = useState();
   const fileInputEl = useRef(null);
-  const API_URL = window.location.hostname === 'notaudible.netlify.app' ? "https://notaudible.herokuapp.com/track" : "http://localhost:3001/track"
+  const API_URL = window.location.hostname === 'notaudible.netlify.app' ? "https://notaudible.herokuapp.com" : "http://localhost:3001"
+  
+  
   const handleInputChange = (event) => {
     setData({
       ...data,
@@ -18,7 +20,7 @@ const UploadBook = () => {
 
 
   const handleSubmit = (files) => {
-    const url = `${API_URL}`;
+    const url = `${API_URL}/track`;
 
     if (files) {
       const formData = new FormData();
@@ -31,7 +33,7 @@ const UploadBook = () => {
       formData.append('urlimage', data.urlimage);
       formData.append('sinopsis', data.sinopsis);
       formData.append('user', localStorage.getItem('id'));
-
+ 
       const options = {
         method: 'POST',
         body: formData,
