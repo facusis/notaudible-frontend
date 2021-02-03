@@ -1,31 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta');
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-.box {
+.box1 {
     background-image: url(UserPanelBG.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     display: flex;
-    flex-direction: column;
-    align-content: center;
+    flex-direction: row;
+    align-content: flex-start;
     height: 94vh;
+    flex: 1 1;
+    flex-wrap: wrap; 
+    padding: 50px;
+    justify-content: space-evenly;
 }
 
-.containerbox {
+.containerbox1 {
     background-color: rgba(31, 31, 31, 0.7);
     color: white;
     height:500px;
     width:80%;
+    min-width: 300px;
     max-width: 500px;
-    margin:auto;
+    margin:5px;
     font-family: 'Mukta', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     backdrop-filter: blur(2px);
+    padding: 50px;
+    align-content: flex-start;
+    flex: 1 1;
     
 }
-h3 {
+.h3g {
     font-style: bold;
     font-family: 'Dancing Script', cursive;
     font-size: xx-large;
@@ -37,7 +45,7 @@ h3 {
     font-style: italic;
 }
 
-a {
+.atex {
     cursor: pointer;
     font-size: 0.8em;
     
@@ -50,4 +58,14 @@ a {
     display: flex;
     align-self: center;
     
+}
+.favlist {
+    font-style : italic;
+    min-height: 30px;
+    margin:10px;
+}
+.favlist:hover {
+    font-weight: bold;
+    color:rgba(255, 197, 122, 0.959);
+    text-decoration: none!important;
 }

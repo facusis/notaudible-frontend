@@ -8,18 +8,23 @@ export const AddComment = (props) => {
 
     const handleChange = (e) => {
       setCommentInput(e.target.value)
-    }
+    };
 
+    const handleKeyPress = (event) => {
+      if(event.key === 'Enter'){
+        console.log(event.key);
+        handleSubmit();
+      };}
+  
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (event) => {      
       fetchResource('data/comments','','POST', {
         userId: localStorage.getItem('id'),
         comment: commentInput,
         bookId: props.bookId,
       }).then((result) => {
-        props.setRefresh(true);
-        setCommentInput('');
+          setCommentInput('');
+          props.setRefresh(true);
       });
     }
     
@@ -28,7 +33,7 @@ export const AddComment = (props) => {
         
         <div>
             <br/>
-            <h4>¡Su opinión también cuenta!</h4>
+            <h4 className="h4a">¡Su opinión también cuenta!</h4>
             <br/>
                 <textarea
                     className="textArea"
@@ -38,12 +43,14 @@ export const AddComment = (props) => {
                     rows="10"
                     id="textarea"
                     value={commentInput}
-                    onChange={handleChange}>
+                    onChange={handleChange}
+                    onKeyPress={handleKeyPress}>
                 </textarea>
                 <br/>
-                <button onClick={handleSubmit}>Enviar</button>
+                <button onClick={handleSubmit}  >Enviar</button>
             <br/>
             <br/>
         </div>
     )
-}
+};
+

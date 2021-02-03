@@ -26,7 +26,9 @@ const UploadBook = () => {
       formData.append('title', data.title);
       formData.append('category', category);
       formData.append('author', data.author);
-      
+      formData.append('urlimage', data.urlimage);
+      formData.append('sinopsis', data.sinopsis);
+      formData.append('user', localStorage.getItem('id'));
 
       const options = {
         method: 'POST',
@@ -49,7 +51,8 @@ const UploadBook = () => {
         })
         .catch((error) => console.log(error));
     }
-  }
+  };
+  console.log(data);
 
   return (
       
@@ -57,6 +60,7 @@ const UploadBook = () => {
       <label className={"labelUpload tituloUpload"}>
         SUBE UN LIBRO
       </label><br/>
+
       <label className={"labelUpload"}>
         Titulo
       </label><br/>
@@ -67,6 +71,7 @@ const UploadBook = () => {
         required 
         onChange={handleInputChange}
       /><br/>
+
       <label className={"labelUpload"}>
         Categoria
       </label><br/>
@@ -74,6 +79,7 @@ const UploadBook = () => {
         setCategory={setCategory} 
         request="category">
       </SelectRequest><br/>
+
       <label className={"labelUpload"}>
         Autor
       </label><br/>
@@ -84,14 +90,15 @@ const UploadBook = () => {
         required 
         onChange={handleInputChange}
       /><br/>
+
       <label className={"labelUpload"}>
         Sinopsis
       </label><br/>
-      <textarea 
+      <input 
         className={'sinopsis'} 
         type="text" 
         name="sinopsis" 
-        required
+        
         onChange={handleInputChange}
       /><br/>
       <label className={"labelUpload"}>
@@ -105,6 +112,18 @@ const UploadBook = () => {
         ref={fileInputEl}
         required
         /><br/>
+
+      <label className={"labelUpload"}>
+        Carátula (url)
+      </label><br/>
+      <input 
+        className={'input-urlimage'} 
+        type="text" 
+        name="urlimage" 
+        
+        onChange={handleInputChange}
+        /><br/>
+
       <button 
         className={"submitButton"}
         onClick={ () => handleSubmit(fileInputEl.current.files) }>

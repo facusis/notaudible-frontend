@@ -4,7 +4,7 @@ import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import Register from './components/Register/Register';
 import Biblioteca from './components/Biblioteca/Biblioteca';
-import InfoAudioLibro from './components/InfoAudioLibro/InfoAudioLibro';
+import PageInfoAudioLibro from './components/InfoAudioLibro/PageInfoAudioLibro';
 import UserPanel from './components/UserPanel/UserPanel';
 import Home from './components/Home/Home';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -20,7 +20,6 @@ Route
 import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK, FORGETPASS, INFOAUDIOLIBRO, USERPROFILE} from './routes';
 import { isLogin } from './utils/loginUtils';
 import {FontAwesomeIcon} from '@fortawesome/fontawesome-free';
-import Favorite from './components/Favorites/Favorite';
 
 export const UserContext = createContext();
 
@@ -41,7 +40,7 @@ function App() {
             <Route path={BIBLIOTECA} exact component={Biblioteca} />
             <PrivateRoute path={PERFIL} component={UserPanel} />
             <PrivateRoute path={UPLOADBOOK} component={PageUploadBook} />
-            <PrivateRoute path={INFOAUDIOLIBRO} exact component={InfoAudioLibro} />
+            <PrivateRoute path={INFOAUDIOLIBRO} exact component={PageInfoAudioLibro} />
             <Route path={FORGETPASS} exact component={Forgetpass} />
             <Route path={USERPROFILE} exact component={UserProfile} />
           </Switch>
@@ -55,3 +54,6 @@ function App() {
   );
 }
 export default App;
+
+
+//<Route path={PUBLICPROFILE} exact component={UserProfile} />//

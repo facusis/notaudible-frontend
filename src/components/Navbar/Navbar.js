@@ -24,7 +24,6 @@ const Navbar = () => {
                     <div className='nav-links'> 
                         <Link to="/" >Home</Link>
                         <Link to="/biblioteca" >Bibliotecas</Link>
-                        <Link to="/biblioteca/infoAudioLibro"> Ver Audiolibro </Link>
                         <Link to="/upload"> Subir Audiolibro </Link> 
                         <Link to="/perfil"> Perfil </Link> 
                         <Link className="nav-cerrarsesion" to="/perfil" onClick={trueLogOut}> Cerrar Sesión </Link> 
