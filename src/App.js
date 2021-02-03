@@ -43,7 +43,6 @@ function App() {
             <PrivateRoute path={INFOAUDIOLIBRO} exact component={PageInfoAudioLibro} />
             <Route path={FORGETPASS} exact component={Forgetpass} />
             <Route path={USERPROFILE} exact component={UserProfile} />
-
           </Switch>
         </LogedContext.Provider>
       </BrowserRouter>
