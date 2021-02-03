@@ -20,6 +20,7 @@ const Biblioteca = () => {
 
     return (
         <div className="BoxLibrary">
+            <br></br>
                 <div className="BoxCategory">
                     {category && category.map(cat => {
                         
