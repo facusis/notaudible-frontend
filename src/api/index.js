@@ -1,3 +1,6 @@
+const API_URL = window.location.hostname === 'notaudible.netlify.app' ? "https://notaudible.herokuapp.com" : "http://localhost:3001"
+
+
 export const fetchResource = (resource, id, method, data, options={}, headers={}) => {
 
 
