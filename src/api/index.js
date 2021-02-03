@@ -3,6 +3,9 @@ const API_URL = window.location.hostname === 'notaudible.netlify.app' ? "https:/
 
 export const fetchResource = (resource, id, method, data, options={}, headers={}) => {
 
+
+    const API_URL = window.location.hostname === 'notaudible.netlify.app' ? "https://notaudible.herokuapp.com" : "http://localhost:3001"
+
     const defaultOptions = {
         mode: 'cors',
         method: method,
