@@ -1,6 +1,6 @@
 
 .main-footer{
-    background-color: #333c4e;
+    background-color: #283c46;
     padding-top: 7em;
     bottom: 0;
     width: 100%;
@@ -8,11 +8,11 @@
 }
 
 .container{
-    background-color: #333c4e;
+    background-color:#283c46;
     display: flex;
     justify-content: space-evenly;
     font-family: 'Space Grotesk',  sans-serif;
-
+    margin-top: -6%;
 }
 
 .cole{
@@ -34,7 +34,7 @@
 .list-unstyled{
     text-align: left;
     margin-left: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
     font-family: 'Space Grotesk',  sans-serif;
     font-weight: 100;
     color: white;
@@ -45,7 +45,7 @@
 .list-unstyled1{
     text-align: right;
     margin-right: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
     font-family: 'Space Grotesk',  sans-serif;
     font-weight: 100;
@@ -55,27 +55,29 @@
 }
 
 .rowe{
-    padding-top: 30px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-family: 'Space Grotesk',  sans-serif;
     font-size: 15px;
-    background-color: #474f5f;
+    background-color: #213540;
     color: white
     
 }
 
 .rows{
-    padding-top: 30px;
-    padding-bottom: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-family: 'Space Grotesk',  sans-serif;
-
-    
 }
 
 .col-small{
     font-family: 'Space Grotesk',  sans-serif;
     
 
+}
+
+.barcelona {
+    color: white;
 }
 
 .letras{
@@ -89,3 +91,6 @@
 
 }
 
+.logosrs {
+    max-width:400%;
+}
