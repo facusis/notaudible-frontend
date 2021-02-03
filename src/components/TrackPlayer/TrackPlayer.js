@@ -14,7 +14,7 @@ const TrackPlayer = (props) => {
             autoPlay={true}
             header={headerPlayer}
             showSkipControls={false}
-            src={`http://localhost:3001/track/${props && props.fileId}`}/>
+            src={`https://notaudible.herokuapp.com/track/${props && props.fileId}`}/>
         
     )
 }
