@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Discover.css";
 //import UserCard from "../UserProfile/UserCard";
 import {fetchResource} from '../../api';
+import Follow from '../Follow/Follow';
 
 const Discover = () => {
   const [users, setUsers] = useState([
@@ -40,9 +41,10 @@ const Discover = () => {
        {users && users.length > 0
        ? users.map(user => {
            return (
-               <div key={user.id} >
-                   {user.nickname}
-                   {user.email}
+             <div>
+              {user.nickname}
+              {user.email}
+              <Follow key={user.id} />
             </div>
            )
        })
