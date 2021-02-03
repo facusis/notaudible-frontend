@@ -48,7 +48,14 @@ export const CardCommentItem = (props) => {
       <ul style={{ listStyleType: "none"}}>
         <div className="UserComentario">{userInfo && userInfo.nickname} opinó {fecha}:</div>
         <div className="UserOpinion">
-          {isUpdate ? (<CommentEditor setIsUpdate={setIsUpdate} setRefresh={props.setRefresh} comment={props.comm.comment} commId={props.comm._id} cancellation={cancelMode} handleDelete={handleDelete}/>) : <div onClick={editMode}>{props.comm.comment}</div>}
+          {isUpdate ? (<CommentEditor
+                              setIsUpdate={setIsUpdate}
+                              setRefresh={props.setRefresh}
+                              comment={props.comm.comment}
+                              commId={props.comm._id}
+                              cancellation={cancelMode}
+                              handleDelete={handleDelete}/>)
+                    :  <div onClick={editMode}>{props.comm.comment}</div>}
         </div>
       </ul>
     );  
