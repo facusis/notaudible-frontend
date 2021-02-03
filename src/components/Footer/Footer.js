@@ -1,8 +1,8 @@
 import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faHeart} from '@fortawesome/free-solid-svg-icons';
-import {faFacebook, faInstagram, faSpotify} from '@fortawesome/free-brands-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram, faSpotify } from '@fortawesome/free-brands-svg-icons';
 
 const footer = () => {
     return (
@@ -40,4 +40,3 @@ const footer = () => {
 };
 
 export default footer;
-
