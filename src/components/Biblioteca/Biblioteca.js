@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import {fetchResource} from "../../api";
 import "./Biblioteca.css";
 import {CatBookCard} from "./CatBookCard";
+import {SearchBar} from './SearchBar';
+
 
 const Biblioteca = () => {
 
@@ -20,7 +22,7 @@ const Biblioteca = () => {
 
     return (
         <div className="BoxLibrary">
-            <br></br>
+            <div className="BoxLibrary"><SearchBar/></div>
                 <div className="BoxCategory">
                     {category && category.map(cat => {
                         
