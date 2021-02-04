@@ -34,34 +34,35 @@ const UserPanel = () => {
 
     return (
         <div className="box1">
+            <h3 className="h3g">Modifica los detalles de la configuración de tu cuenta de <text style={{ fontWeight: 'bolder' }}>NotAudible</text></h3>
+            <br></br><br></br>
+            
         <div className="containerbox1">
-        <div className="sectionNote"> Modifica los detalles de la configuración de tu cuenta de <text style={{ fontWeight: 'bolder' }}>NotAudible</text></div>
         <div>
-            <h3 className="h3g">Email</h3>
+            <h4 className="h3g">Correo Electronico:</h4>
         {!emailInput ? 
             <div> {data && data.email} 
-                <a className="atex" id="email" onClick={changeState}> (change)</a>
+                <button className="raise" id="email" onClick={changeState}> Actualizar</button>
             </div> : <InputUpdate request="email" setInput={setEmailInput}></InputUpdate>
         }
         </div>
         <div>
-            <h3 lassName="h3g">Nickname</h3>
+            <h4 lassName="h3g">Nombre de usuario:</h4>
         {!nicknameInput ? 
             <div> {data && data.nickname} 
-                <a className="atex" id="nickname" onClick={changeState}> (change)</a>
+                <button className="raise" id="nickname" onClick={changeState}> Actualizar</button>
             </div> : <InputUpdate request="nickname" setInput={setNicknameInput}></InputUpdate>
         }
         </div>
         <div>
-            <h3 lassName="h3g">About</h3>
+            <h4 lassName="h3g">Observaciones</h4>
         {!aboutInput ? 
             <div> {data && data.about} 
-                <a className="atex" id="about" onClick={changeState}> (change)</a>
+                <button className="raise" id="about" onClick={changeState}> Actualizar</button>
             </div> : <InputUpdate request="about" setInput={setAboutInput}></InputUpdate>
         }
         </div>
         
-        <div className="underlineDecoration"></div>
     </div>
     <FavouriteList userId={data && data._id}/>
     </div>

@@ -1,96 +1,40 @@
 *{margin: 0;padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;}
-
+    font-family: sans-serif;
+    }
+    
 /*************************************************** Botones Audiolibros ****************************************************/
 
-.contenedor{
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-    background-color: black;
+@media all and (max-width: 800px){
+  #contenedor-bloque .bloque{
+      display: block !important;  /* Cuando el ancho sea inferior a 800px el elemento será un bloque */
+      width: auto !important;
+      background-color: 
+      #213540;
+  }
 }
-.contenedor figure{
-   position:relative;
-    height: 250px;
-    cursor: pointer;
-    width: 350px;
-    overflow: hidden;
-    border-radius: 6px;
-    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
-    margin-left: 19px;
+#contenedor-bloque {
+  background-color: #283c46;
 }
-.contenedor figure img{
-    width: 100%;
-    height: 100%;
-    transition: all 500ms ease-out;
+#contenedor-bloque .bloque{
+  display: inline-block;  /* Es esencial para que se muestren los bloques en línea */
+  height:300px;
+  width: 300px;
+  border:1px solid #333;
+  background: #999;
+  margin:20px;
 }
-.contenedor figure .capa{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,103,123,0.7);
-    transition: all 500ms ease-out;
-    opacity: 0;
-    visibility: hidden;
-   text-align: center;
-}
-.contenedor figure:hover > .capa {
-    opacity: 1;
-    visibility: visible;
-}
-.contenedor figure:hover > .capa h3{
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-.contenedor figure:hover > img{
-    transform: scale(1.3);
-}
-.contenedor figure .capa h3{
-    color: #fff;
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 500ms ease-out;
-     margin-top: 580px;
-}
-.contenedor figure .capa p{
-    color: #fff;
-    font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
-}
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 0%;
-        background-color: black;
-      }
-      
-      td, th {
-        border: 1px solid black;
-        text-align: left;
-        padding: 8px;
-      }
-      
-      tr:nth-child(even) {
-        background-color:black;
-      }
 
 /*************************************************** Slider ****************************************************/
     .main{
         position:relative;
-        height:80vh;
+        height:40vh;
         width:100%;
         color:#fff;
       }
       .main .slider{
         position:relative;
-        height:100vh;
+        height:50vh;
         width:100%;
       }
       .main .slider .slides{
@@ -228,4 +172,9 @@
       .main a:hover{
         background:#017fb5;
       }
+
       
+/**** Fondo logo ****/
+.fondo-logo{
+  background-color: #213540;
+}
