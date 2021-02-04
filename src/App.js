@@ -20,7 +20,6 @@ Route
 import {HOME, BIBLIOTECA, REGISTER, LOGIN, PERFIL, UPLOADBOOK, FORGETPASS, INFOAUDIOLIBRO, USERPROFILE} from './routes';
 import { isLogin } from './utils/loginUtils';
 import {FontAwesomeIcon} from '@fortawesome/fontawesome-free';
-import Favorite from './components/Favorites/Favorite';
 
 export const UserContext = createContext();
 
@@ -44,7 +43,6 @@ function App() {
             <PrivateRoute path={INFOAUDIOLIBRO} exact component={PageInfoAudioLibro} />
             <Route path={FORGETPASS} exact component={Forgetpass} />
             <Route path={USERPROFILE} exact component={UserProfile} />
-
           </Switch>
         </LogedContext.Provider>
       </BrowserRouter>

@@ -15,8 +15,15 @@ export const CommentEditor = (props) => {
       setUpdateInput(e.target.value)
     }
 
-    console.log(props.commId);
-    
+
+    //Esc and enter buttons make actions too//
+
+    const handleKeyPress = (e) => {
+      if(e.which === 13){
+          handleUpdate()
+      };
+    }
+
     const handleUpdate = () => {
       
       fetchResource('data/comments', props.commId,'PUT', {
@@ -32,7 +39,7 @@ export const CommentEditor = (props) => {
 
     return (
         <div className="editorbox">
-            <textarea className="editTextArea" onChange={handleChange}>
+            <textarea className="editTextArea" onChange={handleChange} onKeyPress={handleKeyPress}>
                {props.comment}
             </textarea>
             <div className="editButtons">

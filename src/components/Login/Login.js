@@ -50,7 +50,7 @@ const Login = () => {
         localStorage.setItem("token", result.token);
         localStorage.setItem("id", result.id);
         loged.setLoged(true);
-        history.push("/biblotecas");
+        history.push("/biblioteca");
       }
     });
   }

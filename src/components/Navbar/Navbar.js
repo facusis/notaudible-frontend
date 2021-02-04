@@ -18,26 +18,25 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='navbar'>
-            <div className='navbar-container'>
-                {isLogin() ? 
-                    <div className='nav-links'> 
-                        <Link to="/" >Home</Link>
-                        <Link to="/biblioteca" >Bibliotecas</Link>
-                        <Link to="/libro/5fd3cc03b1ae4e8318b0060b"> Ver Audiolibro </Link>
-                        <Link to="/upload"> Subir Audiolibro </Link> 
-                        <Link to="/perfil"> Perfil </Link> 
-                        <Link className="nav-cerrarsesion" to="/perfil" onClick={trueLogOut}> Cerrar Sesión </Link> 
-                    </div> : 
-                    <div className='nav-links'> 
-                        <Link to="/" >Home</Link>
-                        <Link to="/biblioteca" >Bibliotecas</Link>
-                        <Link to="/register"> Register </Link>
-                        <Link className="nav-login" to="/login"> Login </Link>
-                    </div>
-                }
-            </div>
-        </nav>
+        <header class="header">
+            {isLogin() ? 
+                <ul class="main-nav"> 
+                    <li><Link className="item" to="/" >Home</Link></li>
+                    <li><Link className="item" to="/biblioteca" >Bibliotecas</Link></li>
+                    <li><Link className="item" to="/upload"> Subir Audiolibro </Link> </li>
+                    <li><Link className="item button" to="/perfil"> Perfil </Link> </li>
+                    <li><Link className="item button secondary" to="/perfil" onClick={trueLogOut}> Cerrar Sesión </Link></li> 
+                </ul> 
+            :
+                <ul class="main-nav"> 
+                        <li><Link className="item" to="/" >Home</Link></li>
+                        <li><Link className="item" to="/biblioteca" >Bibliotecas</Link></li>
+                        <li><Link className="item button" to="/register"> Register </Link></li>
+                        <li><Link className="item button secondary" to="/login"> Login </Link></li>
+                </ul>
+            }
+            <img src="logo.jpeg" height="50px" width="150px"></img>
+        </header>
     )
 }
 

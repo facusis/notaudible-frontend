@@ -1,6 +1,3 @@
-.botonFav {
-    background-color: transparent;
-    text-align: center;
-    color: #c0a483;
-    border: none;
+.love {
+    cursor: pointer;
 }

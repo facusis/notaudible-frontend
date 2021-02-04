@@ -7,7 +7,9 @@ const UploadBook = () => {
   const [data, setData] = useState({});
   const [category, setCategory] = useState();
   const fileInputEl = useRef(null);
-
+  const API_URL = "https://notaudible.herokuapp.com"
+  
+  
   const handleInputChange = (event) => {
     setData({
       ...data,
@@ -15,8 +17,10 @@ const UploadBook = () => {
     })
   }
 
+
+
   const handleSubmit = (files) => {
-    const url = `http://localhost:3001/track`;
+    const url = `${API_URL}/track`;
 
     if (files) {
       const formData = new FormData();
@@ -26,7 +30,10 @@ const UploadBook = () => {
       formData.append('title', data.title);
       formData.append('category', category);
       formData.append('author', data.author);
-      
+      formData.append('urlimage', data.urlimage);
+      formData.append('sinopsis', data.sinopsis);
+      formData.append('user', localStorage.getItem('id'));
+ 
       const options = {
         method: 'POST',
         body: formData,
@@ -48,17 +55,16 @@ const UploadBook = () => {
         })
         .catch((error) => console.log(error));
     }
-  }
+  };
+  console.log(data);
 
   return (
       
     <div className={"uploadForm"}>
-      <label className={"labelUpload tituloUpload"}>
-        SUBE UN LIBRO
-      </label><br/>
+      <br></br>
       <label className={"labelUpload"}>
         Titulo
-      </label><br/>
+      </label>
       <input 
         className={'input-library'} 
         type="text" 
@@ -66,16 +72,18 @@ const UploadBook = () => {
         required 
         onChange={handleInputChange}
       /><br/>
+
       <label className={"labelUpload"}>
         Categoria
-      </label><br/>
+      </label>
       <SelectRequest 
         setCategory={setCategory} 
         request="category">
       </SelectRequest><br/>
+
       <label className={"labelUpload"}>
         Autor
-      </label><br/>
+      </label>
       <input 
         className={'input-library'} 
         type="text" 
@@ -83,19 +91,20 @@ const UploadBook = () => {
         required 
         onChange={handleInputChange}
       /><br/>
+
       <label className={"labelUpload"}>
         Sinopsis
-      </label><br/>
-      <textarea 
+      </label>
+      <input 
         className={'sinopsis'} 
         type="text" 
         name="sinopsis" 
-        required
+        
         onChange={handleInputChange}
       /><br/>
       <label className={"labelUpload"}>
         Archivo
-      </label><br/>
+      </label>
       <input 
         className={'input-library'} 
         type="file"
@@ -104,6 +113,18 @@ const UploadBook = () => {
         ref={fileInputEl}
         required
         /><br/>
+
+      <label className={"labelUpload"}>
+        Carátula (url)
+      </label>
+      <input 
+        className={'input-urlimage'} 
+        type="text" 
+        name="urlimage" 
+        
+        onChange={handleInputChange}
+        /><br/>
+
       <button 
         className={"submitButton"}
         onClick={ () => handleSubmit(fileInputEl.current.files) }>

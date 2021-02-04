@@ -1,23 +1,49 @@
-.Conteudo {
-    text-align: center;
-    position:relative;
-    height:80vh;
-    width:100%;
-    color:rgb(247, 252, 251);
-    background:linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35));
+.BoxLibrary {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;     
+    color: white;
 }
-.foto {
-    max-width: 15%;
-    height: auto;
-    margin: auto;
+
+.BoxCategory {
+    background-color: #283c46;
+    min-width: 100%;
+    color: white;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    
 }
-.boxes {
-    background-image: url(../Biblioteca/UserPanelBG.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    display: flex;
-    flex-direction: column;
+
+.BoxBooksInCategory {
+    display:flex;
+    background-color: rgb(132, 192, 82);
     align-content: center;
-    height: 94vh;
+    justify-content: center;
+}
+
+.BooksInCategory {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.BoxSingleBook {
+    background-color: white;
+    padding: 15px;
+}
+
+.BookImageLibrary {
+    margin: 50px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    -webkit-box-shadow: 2px 2px 17px 4px rgba(0,0,0,0.87);
+    -moz-box-shadow: 2px 2px 17px 4px rgba(0,0,0,0.87);
+    box-shadow: 2px 2px 17px 4px rgba(0,0,0,0.87);
+    
 }

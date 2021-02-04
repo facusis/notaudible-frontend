@@ -1,58 +1,40 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import {fetchResource} from "../../api";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Biblioteca.css";
+import {CatBookCard} from "./CatBookCard";
 
-const Biblioteca = ({setCategory, request}) => {
-    const [data, setData] = useState();
+const Biblioteca = () => {
 
-    useEffect(() => {
-        fetchResource('data/category',"",'GET').then(result => { setData(result) });
-    }, []);
-
-    const [datas, setDatas] = useState();
+    const [category, setCategory] = useState();
 
     useEffect(() => {
-        fetchResource('data/book',"",'GET').then(results => { setDatas(results) });
+        fetchResource('data/category','','GET').then(result => { setCategory(result) });
     }, []);
 
-    var imagenes=new Array(
-        ['img/1.jpg','http://www.lawebdelprogramador.com/cursos/'],
-        ['img/2.jpg','http://www.lawebdelprogramador.com/foros/'],
-        ['img/3.jpg','http://www.lawebdelprogramador.com/pdf/'],
-        ['img/4.jpg','http://www.lawebdelprogramador.com/utilidades/']
-    );
+    
+    //No funciona con controller especifico?
+    // useEffect(() => {
+    //     fetchResource('user/library','','POST', '', {bookId:''}).then(result => { setAllBooks(result) });
+    // }, []);
 
     return (
-        <div className="boxes">
-        <div className="card bg-light mb-4">
-            {data && data.map((item) => (
-                <div className="card-body">
-
-                    <div class="card-header">
-                        <option key={item.name} value={item._id}>
-                            {item.name}
-                        </option>
-                    </div>
-
-                    {datas && datas.map((results) => (
-                        <div className="card-text">
-                            <div class="row">
-                                <div className="col-sm">
-                                    <img src="https://definicion.de/wp-content/uploads/2009/03/libro.jpg" className="foto"></img>
-                                    <option key={results.title} value={item._id===results.category}>
-                                        <a href=" ">{results.title}</a>
-                                    </option>
-                                </div>
-                            </div>
+        <div className="BoxLibrary">
+            <br></br>
+                <div className="BoxCategory">
+                    {category && category.map(cat => {
+                        
+                        return <div className="BoxCategory">
+                                <h3>{cat.name}</h3>
+                                <div className="BoxBooksInCategory">
+                                        <CatBookCard
+                                            idCat = {cat._id}
+                                            
+                                        /> </div>
                         </div>
-                    ))}
-
+                        })}
                 </div>
-            ))}
-    </div>
-    </div>
+        </div>
     );
 };
 

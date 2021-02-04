@@ -10,7 +10,7 @@ const footer = () => {
         <div className={"main-footer"}>
             <div className="container">        
                     <div className="cole">
-                        <h2>BARCELONA</h2>
+                        <h2 className="barcelona">BARCELONA</h2>
                             <ul className="list-unstyled">
                                 <li>Carrer Padilla 78.</li>
                                 <li>TEL: 123 456 789</li>
