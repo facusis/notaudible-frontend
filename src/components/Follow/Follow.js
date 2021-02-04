@@ -1,16 +1,11 @@
 import React, { useEffect, useState} from "react";
-import { useParams } from "react-router-dom";
 import {fetchResource} from '../../api';
-import decode from 'jwt-decode';
 
-const Follow = () => {
+const Follow = (props) => {
 
-    const { id } = useParams();
-   // const [user, setUser] = useState([]);
-    const loggedUser = decode(localStorage.getItem('token'));
-    const userId = loggedUser._id;
     const [following, setFollowing] = useState(false);
 
+    const [followId, setFollowId] = useState('');
 
 // to fetch the data of the user that I want to follow
     // const fetchUserData = () => {
@@ -22,29 +17,24 @@ const Follow = () => {
     // useEffect(() => {
     //     fetchUserData()
     // }, []);
+   
+    console.log(props.user._id); // from Discover component
+
 
     const unFollow = () => {
-        fetch(`http://localhost:3001/user/follow`, {
-            method: "POST",
-            body:  JSON.stringify({
-                follower: userId,  // logged user id
-                following: id
-            }),
-            headers: {
-                "Content-type": "application/json",
-                "Authorization": `bearer ${localStorage.getItem("token")}`,
-            },
-            })
-            .then(res => res)
-            .then(data => setFollowing(false))
+        fetchResource('data/follow', followId._id, 'DELETE', {})
+        setFollowing(false);
+        console.log('Unfollowed');
     };
+
+    console.log(followId._id);
 
     const handleFollow = () => {
         fetch(`http://localhost:3001/user/follow`, {
             method: "POST",
             body:  JSON.stringify({
-                follower: userId,  // logged user id
-                following: id
+                follower: localStorage.getItem('id'),  // logged user id
+                following: props.user._id
             }),
             headers: {
                 "Content-type": "application/json",
@@ -52,20 +42,22 @@ const Follow = () => {
             },
                     
         })
-        .then(res => res.json())
-        .then(() =>   
-            setFollowing(true))
-    };
+        .then((res) => res.json())
+        .then((res) => {
+            setFollowId(res);
+            setFollowing(true);
+            console.log('Follwed')
+    });
+};
+
+    const showFollowButton =  following ?
+    (<button onClick={unFollow}>Unfollow</button>)
+    : 
+    (<button onClick={handleFollow}>Follow</button>)
 
     return (
         <div>
-            {/* {user.nickname} */}
-            {following ?
-            (<button onClick={unFollow()}>Unfollow</button>)
-            : 
-            (<button onClick={handleFollow()}>Follow</button>)
-            }
-
+         {props.user._id === localStorage.getItem('id') ? null : showFollowButton }
         </div>
     );
 

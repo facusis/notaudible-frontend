@@ -5,6 +5,7 @@ import {fetchResource} from '../../api';
 import Follow from '../Follow/Follow';
 
 const Discover = () => {
+  
   const [users, setUsers] = useState([
     {
       nickname: "",
@@ -34,7 +35,7 @@ const Discover = () => {
 //   }
   
 
-  return (
+  return ( 
     <div className="userProfiles">
       <h2>Discover users</h2>
       <div className="userProfiles__userCard">
@@ -44,7 +45,7 @@ const Discover = () => {
              <div>
               {user.nickname}
               {user.email}
-              <Follow key={user.id} />
+              {user && <Follow user={user} /> }
             </div>
            )
        })
