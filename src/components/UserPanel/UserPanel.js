@@ -36,7 +36,7 @@ const UserPanel = () => {
         <div className="box1">
             <h3 className="h3g">Modifica los detalles de la configuración de tu cuenta de <text style={{ fontWeight: 'bolder' }}>NotAudible</text></h3>
             <br></br><br></br>
-            
+       <div className="boxbox">
         <div className="containerbox1">
         <div>
             <h4 className="h3g">Correo Electronico:</h4>
@@ -68,7 +68,7 @@ const UserPanel = () => {
             
         </div>
         </div>
-    
+        </div>    
     
     );
 };
