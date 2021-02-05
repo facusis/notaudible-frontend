@@ -3,6 +3,7 @@ import './UserPanel.css';
 import InputUpdate from '../Utils/InputUpdate';
 import {fetchResource} from "../../api";
 import {FavouriteList} from "../FavouriteList/FavouriteList";
+import {Discover} from '../Discover/Discover';
 
 
 const UserPanel = () => {
@@ -63,9 +64,12 @@ const UserPanel = () => {
         }
         </div>
         
-    </div>
-    <FavouriteList userId={data && data._id}/>
-    </div>
+        
+            <div className="containerbox1"> <FavouriteList userId={data && data._id}/> </div>
+            <div className="containerbox1"> <Discover/> </div>
+        </div>
+        </div>
+    
     
     );
 };
