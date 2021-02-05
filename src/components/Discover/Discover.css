@@ -1,0 +1,22 @@
+.userProfiles {
+    flex: 0.8;
+    background-color: lightgray;
+
+}
+
+.userProfiles > h2 {
+    align-items: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.userProfiles__userCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 45px;
+    margin-bottom: 15px;
+
+
+}
