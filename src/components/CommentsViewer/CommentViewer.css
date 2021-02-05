@@ -70,7 +70,7 @@ button{
     width: 90%;
 }
 .editTextArea {
-    background: rgba(255, 255, 255, 0.774);
+    background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     padding: 10px;
     opacity: 80%;
