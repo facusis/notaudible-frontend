@@ -1,53 +1,96 @@
+
 @import url('https://fonts.googleapis.com/css?family=Mukta');
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-.box {
-    background-image: url(UserPanelBG.jpg);
+.box1 {
+    background-color: rgba(145, 140, 140, 0.596);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    height: 94vh;
+    flex-direction: row;
+    align-content: flex-start;
+    flex: 1 1;
+    flex-wrap: wrap; 
+    padding: 50px;
+    justify-content: space-evenly;
 }
-
-.containerbox {
-    background-color: rgba(31, 31, 31, 0.7);
+.containerbox1 {
+    background-color: #283c46;
     color: white;
-    height:500px;
-    width:80%;
-    max-width: 500px;
-    margin:auto;
-    font-family: 'Mukta', sans-serif;
+    height: 400px;
+    width: 80%;
+    min-width: 300px;
+    margin: 5px;
+    font-family: 'Space Grotesk', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    
+    padding: 50px;
+    align-content: flex-start;
+    /* flex: 1 1; */
+    /* border-radius: 5%; */
+    margin-top: 1%;
 }
-h3 {
+.h3g {
     font-style: bold;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Space Grotesk',  sans-serif;
     font-size: xx-large;
+    color: white;
 }
-
 .sectionNote {
     padding-left: 10%;
     padding-right: 10%;
     font-style: italic;
 }
-
-a {
+.atex {
     cursor: pointer;
     font-size: 0.8em;
-    
 }
-
 .underlineDecoration {
    content: url(Cenefa.png);
     width: 200px;
     height: max-content;
     display: flex;
     align-self: center;
-    
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
+.favlist {
+    font-style : italic;
+    min-height: 30px;
+    margin:10px;
+}
+.favlist:hover {
+    font-weight: bold;
+    color:rgba(255, 197, 122, 0.959);
+    text-decoration: none!important;
+}
+.a {
+    font-family: 'Space Grotesk',  sans-serif;
+}
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
+}
+.raise {
+    --color: #2498BB;
+    --hover: #2498BB;
+  }
+  button {
+    background: none;
+    border: 1px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    background-color: #0C212B;
+    border-radius: 0%;
+    color: white;
+  }
+
+
+
