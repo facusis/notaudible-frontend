@@ -1,22 +1,36 @@
 .userProfiles {
     flex: 0.8;
     background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 
-.userProfiles > h2 {
+.discoverTitle {
     align-items: center;
-    padding-top: 30px;
-    margin-bottom: 30px;
+    padding: 50px;
+    width: 100%;
+}
+
+.discoverItems {
+    flex-wrap: wrap;
+    flex-direction: row;
+
 }
 
 .userProfiles__userCard {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+
     margin-top: 45px;
     margin-bottom: 15px;
-
-
+    min-width: 250px;
 }
+
+.userNickname {
+    font-weight: bolder;
+}
+
+.userEmail {
+    font-style: italic;
+}
+
