@@ -9,7 +9,10 @@
     width: 100vw;
     color: #a1a8ac;
 }
-
+.boxbox  {
+    display:flex;
+    flex-direction: column;
+}
 .namesearch {
     border: 1px solid grey;
   border-radius: 5px;
