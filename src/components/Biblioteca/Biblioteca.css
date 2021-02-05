@@ -7,7 +7,7 @@
 
 
 .BoxCategory {
-    background-color: #283c46;
+    background-color: #6e7f86;
     min-width: 100%;
     color: white;
     margin-top: 1%;
@@ -17,7 +17,7 @@
 
 .BoxBooksInCategory {
     display:flex;
-    background-color: rgb(132, 192, 82);
+    background-color: #a1a8ac;
     align-content: center;
     justify-content: center;
 }
@@ -31,8 +31,8 @@
 }
 
 .BoxSingleBook {
-    background-color: white;
-    padding: 15px;
+    background-color: #a1a8ac;
+    padding: 25px;
 }
 
 .BookImageLibrary {
@@ -45,6 +45,11 @@
     margin: auto;
     -webkit-box-shadow: 2px 2px 17px 4px rgba(0,0,0,0.87);
     -moz-box-shadow: 2px 2px 17px 4px rgba(0,0,0,0.87);
-    box-shadow: 2px 2px 17px 4px rgba(0,0,0,0.87);
-    
+    box-shadow: 2px 2px 17px 4px rgba(0,0,0,0.87);   
+}
+
+.SingleBookTitle {
+    font-weight: bold;
+    max-width: 200px;
+    margin-top: 10px;
 }

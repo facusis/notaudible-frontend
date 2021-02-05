@@ -20,8 +20,7 @@ export const BookCard = (props) => {
                    <img className="BookImageLibrary" src={ isImage ? props.urlimage : noImage }></img>
                </div>
 
-           {props.title}
-
+           <div className="SingleBookTitle">{props.title}</div>
         </div>
     )
 }
