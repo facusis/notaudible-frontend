@@ -26,7 +26,7 @@ export const SearchBar = () => {
       }
 
     return (
-        <div className="BoxLibrary">
+        <div className="BoxSearchSection">
           <input 
           className={'namesearch'} 
           type="text" 
@@ -36,7 +36,7 @@ export const SearchBar = () => {
           /><br/>
   
         <button 
-          className={"submitButton"}
+          className={"raise"}
           onClick={ () => handleSubmit() }>
           Encuentra!
         </button>
