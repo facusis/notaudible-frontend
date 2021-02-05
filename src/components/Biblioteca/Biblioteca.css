@@ -1,16 +1,19 @@
 .BoxLibrary {
     display:flex;
     flex-direction: row;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;     
+    color: white;
 }
 
 
 .BoxCategory {
-    background-color:rgb(255, 203, 161);
+    background-color: #283c46;
     min-width: 100%;
+    color: white;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    
 }
-
-
 
 .BoxBooksInCategory {
     display:flex;
@@ -28,7 +31,7 @@
 }
 
 .BoxSingleBook {
-    background-color: pink;
+    background-color: white;
     padding: 15px;
 }
 

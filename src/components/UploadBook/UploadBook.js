@@ -61,13 +61,10 @@ const UploadBook = () => {
   return (
       
     <div className={"uploadForm"}>
-      <label className={"labelUpload tituloUpload"}>
-        SUBE UN LIBRO
-      </label><br/>
-
+      <br></br>
       <label className={"labelUpload"}>
         Titulo
-      </label><br/>
+      </label>
       <input 
         className={'input-library'} 
         type="text" 
@@ -78,7 +75,7 @@ const UploadBook = () => {
 
       <label className={"labelUpload"}>
         Categoria
-      </label><br/>
+      </label>
       <SelectRequest 
         setCategory={setCategory} 
         request="category">
@@ -86,7 +83,7 @@ const UploadBook = () => {
 
       <label className={"labelUpload"}>
         Autor
-      </label><br/>
+      </label>
       <input 
         className={'input-library'} 
         type="text" 
@@ -97,7 +94,7 @@ const UploadBook = () => {
 
       <label className={"labelUpload"}>
         Sinopsis
-      </label><br/>
+      </label>
       <input 
         className={'sinopsis'} 
         type="text" 
@@ -107,7 +104,7 @@ const UploadBook = () => {
       /><br/>
       <label className={"labelUpload"}>
         Archivo
-      </label><br/>
+      </label>
       <input 
         className={'input-library'} 
         type="file"
@@ -119,7 +116,7 @@ const UploadBook = () => {
 
       <label className={"labelUpload"}>
         Carátula (url)
-      </label><br/>
+      </label>
       <input 
         className={'input-urlimage'} 
         type="text" 
