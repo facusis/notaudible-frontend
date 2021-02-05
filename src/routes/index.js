@@ -4,6 +4,7 @@ const INFOAUDIOLIBRO = "/infoAudioLibro/:bookId";
 const LOGIN = '/login';
 const REGISTER = '/register';
 const PERFIL = '/perfil';
+const DISCOVER = '/discover';
 const UPLOADBOOK = '/upload';
 const FORGETPASS = '/login/forgetPass';
 const USERPROFILE = '/perfil'
@@ -17,6 +18,7 @@ export {
     REGISTER,
     PERFIL,
     UPLOADBOOK,
+    DISCOVER,
     FORGETPASS,
     INFOAUDIOLIBRO,
     USERPROFILE,

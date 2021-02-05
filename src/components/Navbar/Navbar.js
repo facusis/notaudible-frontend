@@ -25,6 +25,7 @@ const Navbar = () => {
                     <li><Link className="item" to="/biblioteca" >Bibliotecas</Link></li>
                     <li><Link className="item" to="/upload"> Subir Audiolibro </Link> </li>
                     <li><Link className="item button" to="/perfil"> Perfil </Link> </li>
+                    <li><Link className="item button" to="/Discover"> Descubre </Link> </li>
                     <li><Link className="item button secondary" to="/perfil" onClick={trueLogOut}> Cerrar Sesión </Link></li> 
                 </ul> 
             :
