@@ -37,14 +37,15 @@ const Discover = () => {
 
   return ( 
     <div className="userProfiles">
-      <h2>Descubre otros usuarios</h2>
-      <div className="userProfiles__userCard">
+      <h2 className="discoverTitle">Descubre otros usuarios</h2>
+      <div className="discoverItems">
        {users && users.length > 0
        ? users.map(user => {
            return (
-             <div>
-              {user.nickname}
-              {user.email}
+             <div className="userProfiles__userCard">
+              <div className="userNickname">{user.nickname}</div>
+              
+              <div className="userEmail">{user.email}</div>
               {user && <Follow user={user} /> }
             </div>
            )
