@@ -4,7 +4,7 @@ import "./Discover.css";
 import {fetchResource} from '../../api';
 import Follow from '../Follow/Follow';
 
-const Discover = () => {
+export const Discover = () => {
 
   const [users, setUsers] = useState([
     {
@@ -55,5 +55,3 @@ const Discover = () => {
     </div>
   );
 };
-
-export default Discover;

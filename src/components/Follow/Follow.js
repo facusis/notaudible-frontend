@@ -30,7 +30,7 @@ const Follow = (props) => {
     console.log(followId._id);
 
     const handleFollow = () => {
-        fetch(`http://localhost:3001/user/follow`, {
+        fetch(`https://notaudible.herokuapp.com/user/follow`, {
             method: "POST",
             body:  JSON.stringify({
                 follower: localStorage.getItem('id'),  // logged user id
