@@ -4,7 +4,7 @@ import "./Discover.css";
 import {fetchResource} from '../../api';
 import Follow from '../Follow/Follow';
 
-export const Discover = () => {
+const Discover = () => {
 
   const [users, setUsers] = useState([
     {
@@ -37,7 +37,7 @@ export const Discover = () => {
 
   return ( 
     <div className="userProfiles">
-      <h2>Discover users</h2>
+      <h2>Descubre otros usuarios</h2>
       <div className="userProfiles__userCard">
        {users && users.length > 0
        ? users.map(user => {
@@ -55,3 +55,5 @@ export const Discover = () => {
     </div>
   );
 };
+
+export default Discover;
