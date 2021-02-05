@@ -21,6 +21,7 @@ const Biblioteca = () => {
     // }, []);
 
     return (
+        <div className="BoxSearch">
         <div className="BoxLibrary">
             <div className="BoxLibrary"><SearchBar/></div>
                 <div className="BoxCategory">
@@ -36,6 +37,7 @@ const Biblioteca = () => {
                         </div>
                         })}
                 </div>
+        </div>
         </div>
     );
 };
